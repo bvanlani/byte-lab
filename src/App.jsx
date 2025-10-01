@@ -9,13 +9,13 @@ import './css/styles.css'
 function App() {  
 
   return (
-    <body>
+    <>
       <Nav />
       <Header />
       <IconGrid />
       <Biography />
       <Footer />
-    </body>
+    </>
   )
 }
 
