@@ -1,9 +1,12 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 export default function Nav(){
     return(
         <nav className="navbar bg-dark static-top">
             <div className="container">
-                <a className="navbar-brand text-light" href="#!">Byte Lab</a>
-                <a className="btn btn-primary" href="#signup">The Lab</a>
+                <Link className="navbar-brand text-light" to="/">Byte Lab</Link>
+                <Link className="btn btn-primary" to="/the-lab">The Lab</Link>
             </div>
         </nav>
     )

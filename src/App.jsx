@@ -1,25 +1,16 @@
-import Nav from './componenets/Nav.jsx'
-import Footer from './componenets/Footer.jsx'
-import Header from './componenets/Header.jsx'
-import IconGrid from './componenets/IconGrid.jsx'
-import Biography from './componenets/Biography.jsx'
-import SectionSplit from './componenets/SectionSplit.jsx'
-import WhatWeDo from './componenets/WhatWeDo.jsx'
+import React from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
-import './css/styles.css'
+import HomePage from './pages/HomePage';
 
 function App() {  
 
   return (
-    <>
-      <Nav />
-      <Header />
-      <IconGrid />
-      <WhatWeDo />
-      <SectionSplit />
-      <Biography />
-      <Footer />
-    </>
+    <BrowserRouter basename="/byte-lab">
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
