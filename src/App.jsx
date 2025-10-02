@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 import HomePage from './pages/HomePage';
+import TheLabPage from './pages/TheLabPage';
 import NoPage from './pages/NoPage';
 
 function App() {  
@@ -10,6 +11,7 @@ function App() {
     <BrowserRouter basename="/byte-lab">
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/the-lab" element={<TheLabPage />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>

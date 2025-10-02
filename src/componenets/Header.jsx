@@ -1,6 +1,6 @@
 export default function Header(){
     return(
-        <header className="masthead">
+        <header className="masthead mainPage-masthead text-white text-center">
             <div className="container position-relative">
                 <div className="row justify-content-center">
                     <div className="col-xl-6">
