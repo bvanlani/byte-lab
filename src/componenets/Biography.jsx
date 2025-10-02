@@ -14,31 +14,35 @@ export default function Biography(){
                     <div className="testimonial-item mx-auto mb-5 mb-lg-0">
                         <img className="img-fluid rounded-circle mb-3" src={BethanPortrait} alt="..." />
                         <h5 className="text-light">Ethan B.</h5>
+                        <p className="text-light"><em>I have 4 years of CS, and am proficient in Web Development and Game Development. </em></p>
                     </div>
                 </div>
                 <div className="col-lg-2">
                     <div className="testimonial-item mx-auto mb-5 mb-lg-0">
                         <img className="img-fluid rounded-circle mb-3" src={candid3} alt="..." />
                         <h5 className="text-light">Ben V.</h5>
+                        <p className="text-light"><em>Eight years of computer science, from building scratch games to learning multiple languages.</em></p>
                     </div>
                 </div>
                 <div className="col-lg-2">
                     <div className="testimonial-item mx-auto mb-5 mb-lg-0">
                         <img className="img-fluid rounded-circle mb-3" src={candid3} alt="..." />
                         <h5 className="text-light">Conner O.</h5>
+                        <p className="text-light"><em>I have 5+ years of background. I have made my own games and custom automation scripts.</em></p>
                     </div>
                 </div>
                 <div className="col-lg-2">
                     <div className="testimonial-item mx-auto mb-5 mb-lg-0">
                         <img className="img-fluid rounded-circle mb-3" src={candid3} alt="..." />
                         <h5 className="text-light">Ethan D.</h5>
+                        <p className="text-light"><em>I started programming in 8th grade with HTML, and now I am proficient in over 7 different coding languages.</em></p>
                     </div>
                 </div>
                 <div className="col-lg-2">
                     <div className="testimonial-item mx-auto mb-5 mb-lg-0">
                         <img className="img-fluid rounded-circle mb-3" src={candid3} alt="..." />
-                        <h5 className="text-light mb-0">Charles D.</h5>
-                        <p className="text-light"><em>Senior</em></p>
+                        <h5 className="text-light">Charles D.</h5>
+                        <p className="text-light"><em>Having started coding in the 6th grade, I have gained proficient experiences in multiple languages.</em></p>
                     </div>
                 </div>
                 <div className="col-lg-1"></div>
