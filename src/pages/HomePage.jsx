@@ -13,7 +13,6 @@ export default function HomePage(){
             <Header />
             <IconGrid />
             <WhatWeDo />
-            <SectionSplit />
             <Biography />
             <Footer />
         </>
