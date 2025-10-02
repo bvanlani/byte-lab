@@ -27,9 +27,9 @@ export default function WhatWeDo(){
                 <div className="row g-0">
                     <div className="col-lg-6 order-lg-2 text-white showcase-img" style={{ backgroundImage: `url(${showcase3})` }}></div>
                     <div className="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2 className="text-light">Last Section</h2>
+                        <h2 className="text-light">What's New</h2>
                         <p className="lead mb-0 text-light">
-                            I don't know what to put here
+                            Here you will find the latest updtates from Byte Lab.
                         </p>
                     </div>
                 </div>
