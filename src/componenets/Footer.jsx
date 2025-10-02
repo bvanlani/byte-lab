@@ -1,6 +1,6 @@
 export default function Footer(){
     return(
-        <footer className="footer bg-light">
+        <footer className="footer bg-dark">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-6 h-100 text-center text-lg-start my-auto">
@@ -14,19 +14,6 @@ export default function Footer(){
                             <li className="list-inline-item"><a href="#!">Privacy Policy</a></li>
                         </ul>
                         <p className="text-muted small mb-4 mb-lg-0">&copy; Your Website 2023. All Rights Reserved.</p>
-                    </div>
-                    <div className="col-lg-6 h-100 text-center text-lg-end my-auto">
-                        <ul className="list-inline mb-0">
-                            <li className="list-inline-item me-4">
-                                <a href="#!"><i className="bi-facebook fs-3"></i></a>
-                            </li>
-                            <li className="list-inline-item me-4">
-                                <a href="#!"><i className="bi-twitter fs-3"></i></a>
-                            </li>
-                            <li className="list-inline-item">
-                                <a href="#!"><i className="bi-instagram fs-3"></i></a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>

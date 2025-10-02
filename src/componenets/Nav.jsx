@@ -1,9 +1,9 @@
 export default function Nav(){
     return(
-        <nav className="navbar bg-light static-top">
+        <nav className="navbar bg-dark static-top">
             <div className="container">
-                <a className="navbar-brand" href="#!">Byte Lab</a>
-                <a className="btn btn-primary" href="#signup">Sign Up</a>
+                <a className="navbar-brand text-light" href="#!">Byte Lab</a>
+                <a className="btn btn-primary" href="#signup">The Lab</a>
             </div>
         </nav>
     )
