@@ -4,6 +4,7 @@ import Header from './componenets/Header.jsx'
 import IconGrid from './componenets/IconGrid.jsx'
 import Biography from './componenets/Biography.jsx'
 import SectionSplit from './componenets/SectionSplit.jsx'
+import WhatWeDo from './componenets/WhatWeDo.jsx'
 
 import './css/styles.css'
 
@@ -14,6 +15,7 @@ function App() {
       <Nav />
       <Header />
       <IconGrid />
+      <WhatWeDo />
       <SectionSplit />
       <Biography />
       <Footer />
