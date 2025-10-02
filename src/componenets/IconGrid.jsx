@@ -21,7 +21,7 @@ export default function IconGrid(){
                         <div className="features-icons-item mx-auto mb-0 mb-lg-3">
                             <div className="features-icons-icon d-flex"><i className="bi-cpu m-auto text-primary"></i></div>
                             <h3 className="text-light">Pre-Built Equipment</h3>
-                            <p className="lead mb-0 text-light">We give you everything you need to get started! We will provide you with the necessary hardware and software to start immediately.</p>
+                            <p className="lead mb-0 text-light">We give you everything you need to get started! We will provide you with the necessary equipment to start immediately.</p>
                         </div>
                     </div>
                 </div>
