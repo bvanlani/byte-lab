@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 export default function Nav(){
     return(
-        <nav className="navbar bg-dark">
+        <nav className="navbar bg-dark nav-expand-lg">
             <div className="container">
                 <Link className="navbar-brand text-light" to="/">Byte Lab</Link>
                 <button
@@ -20,20 +21,19 @@ export default function Nav(){
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
-                        <Link className="nav-link" to="/the-lab">The Lab</Link>
+                        <Link className="nav-link text-light" to="/the-lab">The Lab</Link>
                         </li>
                         <li className="nav-item">
-                        <Link className="nav-link" to="/learn">Learn</Link>
+                        <Link className="nav-link text-light" to="/learn">Learn</Link>
                         </li>
                         <li className="nav-item">
-                        <Link className="nav-link" to="/news">News</Link>
+                        <Link className="nav-link text-light" to="/news">News</Link>
                         </li>
                         <li className="nav-item">
-                        <Link className="nav-link" to="/contact">Contact</Link>
+                        <Link className="nav-link text-light" to="/contact">Contact</Link>
                         </li>
                     </ul>
-                </div>
-                <Link className="btn btn-primary" to="/the-lab">The Lab</Link>
+                </div>                
             </div>
         </nav>
     )
