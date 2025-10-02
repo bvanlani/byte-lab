@@ -10843,15 +10843,9 @@ header.masthead {
   padding-bottom: 8rem;
 }
 
-.mainPage-masthead {
+.masthead {
   background: url("../assets/bg-masthead.png") no-repeat center center;
   background-size: cover;
-}
-
-.custom-masthead {
-  background-image: none;
-  background-size: cover;
-  background-position: center;
 }
 
 
