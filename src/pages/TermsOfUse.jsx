@@ -13,13 +13,13 @@ export default function TermsOfUse(){
                     <h1>Terms of use for Byte Lab</h1>
                     <p>Last updated: <em>June 15, 2025</em></p>
                     <br />
-                    <p>Welcome to Byte Lab (“Website”), an educational platform operated by the Byte Lab Computer Science Outreach Club (“we,” “us,” or “our”) at Lakeview Technology Academy. Byte Lab provides middle school students with a digital environment to learn computer science and test VEX robotics code. <br /><br />
-                        By accessing or using this Website, you (“User”) agree to be bound by these Terms of Use. If you do not agree to these Terms, please do not use the Website.</p>
+                    <p>Welcome to Byte Lab (“Website”), an educational platform operated by the Byte Lab Computer Science Outreach Club (“we,” “us,” or “our”) at Lakeview Technology Academy. Byte Lab provides middle school students with a digital environment to learn computer science and test VEX robotics code.<br /><br />
+                        By accessing or using this Website, you (“User”) agree to be bound by these Terms of Use. If you do not agree to these Terms, you are not permitted to use the Website.</p>
                 </div>
                 <div className="container text-center p-5 mb-5 bg-dark text-light">
                     <h1>Eligibility</h1>
                     <br />
-                    <p>Byte Lab is intended for educational use by middle school students participating in our outreach programs. Users under the age of 13 must have parental or guardian consent and be supervised by a teacher or mentor.</p>
+                    <p>Byte Lab is intended for educational use by middle-school or high-school students participating in our outreach programs. Users under the age of 13 must have parental or guardian consent and be supervised by a teacher or mentor at all times while on the Website.</p>
                 </div>
                 <div className="container text-center p-5 mb-5 bg-dark text-light">
                     <h1>Acceptable Use</h1>
@@ -29,8 +29,12 @@ export default function TermsOfUse(){
                      <ul className="text-start">
                         <li>Use the Website for any unlawful, harmful, or disruptive activity.</li>
                         <li>Attempt to gain unauthorized access to other users’ accounts or data.</li>
-                        <li>Upload or transmit any content that is offensive, inappropriate, or violates applicable laws or school policies.</li>
+                        <li>Engage in any activity that could damage, disable, or impair the Website.</li>
+                        <li>Attempt to use the Website for malicous purposes. Including but not limited to, bullying, phishing and uploading of malware or viruses.</li>
+                        <li>Use inappropriate or offensive language or content.</li>
+                        <li>Upload or transmit any content that is offensive, inappropriate, or violates applicable laws or local school or KUSD policies.</li>
                      </ul>
+                     <p>Failure to comply may result in legal action and/or removal of access to our service(s).</p>
                 </div>
                 <div className="container text-center p-5 mb-5 bg-dark text-light">
                     <h1>User Content</h1>
@@ -45,7 +49,7 @@ export default function TermsOfUse(){
                 <div className="container text-center p-5 mb-5 bg-dark text-light">
                     <h1>Intellectual Property</h1>
                     <br />
-                    <p>All content, software, and materials provided on the Website (excluding user-generated content) are the property of Byte Lab or its licensors and are protected by copyright and other intellectual property laws. You may not copy, modify, or distribute any materials without prior written permission.</p>
+                    <p>All content, software, and materials provided on the Website (excluding user-generated content) are the property of Byte Lab and/or its licensors and are protected by copyright and other intellectual property laws. You may not copy, modify, or distribute any materials without prior written permission from the Byte Lab team.</p>
                 </div>
                 <div className="container text-center p-5 mb-5 bg-dark text-light">
                     <h1>Disclaimer of Warranties</h1>
