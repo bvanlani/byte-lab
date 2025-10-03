@@ -57,10 +57,24 @@ ${userCode}
     const stderr = await pyodideRef.current.runPythonAsync("sys.stderr.getvalue()");
 
     //Combinig everything and outputting it unless there is nothing then sending a blank string to keep zuc happy
-    setOutput((stdout + stderr).trim() || ""); // update React state
+    setOutput((stdout + stderr) || "So empty here"); // update React state
   } catch(err){
     //Returning error if messed up
-    setOutput("Something went wrong! Try again.");
+    try{
+        const stderr = await pyodideRef.current.runPythonAsync("sys.stderr.getvalue()");
+        //console.log(stderr);
+        let last_line = stderr.lastIndexOf("Error");
+        console.log(last_line);
+        console.log(stderr.length);
+        last_line = stderr.slice(last_line + 6, stderr.length);
+        console.log(last_line);
+        let simplified = "\n---\n ERROR: " + last_line + "\n";
+        console.log(simplified);
+        setOutput(("Uh oh looks like you have an error! " + simplified));
+    }
+    catch{
+        setOutput("Uh oh looks like you have an error! " + err.message);
+    }
   }
 }
 
