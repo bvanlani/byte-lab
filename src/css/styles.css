@@ -10938,7 +10938,6 @@ footer.footer {
 
 .no-page {
   position: relative;
-  background-size: cover;
-  padding-top: 8rem;
-  padding-bottom: 26.25rem;
+  padding-top: 17.125rem;
+  padding-bottom: 17.125rem;
 }
