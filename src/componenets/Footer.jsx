@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export default function Footer(){
     return(
-        <footer className="footer">
+        <footer className="footer bg-dark-secondary">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-6 h-100 text-center text-lg-start my-auto">
@@ -11,7 +11,7 @@ export default function Footer(){
                             <li className="list-inline-item text-light">⋅</li>
                             <li className="list-inline-item"><Link to="/contact">Contact</Link></li>
                             <li className="list-inline-item text-light">⋅</li>
-                            <li className="list-inline-item"><Link to="/terms">Terms of Use</Link></li>
+                            <li className="list-inline-item"><Link to="/terms-of-use">Terms of Use</Link></li>
                             <li className="list-inline-item text-light">⋅</li>
                             <li className="list-inline-item"><Link to="/privacy-policy">Privacy Policy</Link></li>
                         </ul>

@@ -6,7 +6,7 @@ export default function WhatWeDo(){
     return(
         <section className="showcase">
             <div className="container-fluid p-0">
-                <div className="row g-0">
+                <div className="row g-0 bg-dark-secondary">
                     <div className="col-lg-6 order-lg-2 text-white showcase-img" style={{ backgroundImage: `url(${showcase1})` }}></div>
                     <div className="col-lg-6 order-lg-1 my-auto showcase-text">
                         <h2 className="text-light">What We Do</h2>
@@ -15,7 +15,7 @@ export default function WhatWeDo(){
                         </p>
                     </div>
                 </div>
-                <div className="row g-0">
+                <div className="row g-0 bg-dark-secondary">
                     <div className="col-lg-6 text-white showcase-img" style={{ backgroundImage: `url(${showcase2})` }}></div>
                     <div className="col-lg-6 my-auto showcase-text">
                         <h2 className="text-light">Our Story</h2>
@@ -24,7 +24,7 @@ export default function WhatWeDo(){
                         </p>
                     </div>
                 </div>
-                <div className="row g-0">
+                <div className="row g-0 bg-dark-secondary">
                     <div className="col-lg-6 order-lg-2 text-white showcase-img" style={{ backgroundImage: `url(${showcase3})` }}></div>
                     <div className="col-lg-6 order-lg-1 my-auto showcase-text">
                         <h2 className="text-light">What's New</h2>
