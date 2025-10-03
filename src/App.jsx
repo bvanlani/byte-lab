@@ -11,7 +11,7 @@ import TermsOfUse from './pages/TermsOfUse';
 function App() {  
 
   return (
-    <HashRouter basename="/byte-lab">
+    <HashRouter>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
