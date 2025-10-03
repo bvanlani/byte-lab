@@ -5,10 +5,10 @@ import Editor from '@monaco-editor/react'
 
 export default function TheLabTop(){
     return(
-        <section>
+        <section className ="vh-100 d-flex flex-column">
             <div className="container">
                 <div className="row">
-                    <div className="rounded col-6 text-light">
+                    <div className="rounded row-6 col-6 text-light" style={{ minHeight: 300 }}>
                     <Editor
                         defaultLanguage="python"
                         defaultValue="# Write your code here"
