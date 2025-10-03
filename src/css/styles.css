@@ -10935,3 +10935,9 @@ footer.footer {
   height:100%;
   z-index:-1;
 }
+
+.no-page {
+  position: relative;
+  padding-top: 17.125rem;
+  padding-bottom: 17.125rem;
+}

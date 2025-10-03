@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting…</title>
+  <script>
+    // Get current path and prepend repo base
+    const repoBase = '/byte-lab';
+    const path = window.location.pathname.replace(repoBase, '');
+    window.location.replace(repoBase + '/#' + path);
+  </script>
+</head>
+<body>
+  <p>Redirecting…</p>
+</body>
+</html>

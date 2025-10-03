@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {HashRouter, Routes, Route} from 'react-router-dom';
 
 import ScrollToTop from './componenets/ScrollToTop.jsx';
 
@@ -11,7 +11,7 @@ import TermsOfUse from './pages/TermsOfUse';
 function App() {  
 
   return (
-    <BrowserRouter basename="/byte-lab">
+    <HashRouter>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -19,7 +19,7 @@ function App() {
         <Route path="/terms-of-use" element={<TermsOfUse />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
