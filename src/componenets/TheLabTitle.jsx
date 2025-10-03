@@ -5,15 +5,14 @@ import Editor from '@monaco-editor/react'
 
 export default function TheLabTop(){
     return(
-        <section className="showcase">
-            <div className="container-fluid p-0">
-                <div className="row g-0 m-3">
-                    <div className="rounded overflow-hidden col-lg-6 col-md-8 m-3" style={{ paddingRight: "50px"}}>
+        <section>
+            <div className="container">
+                <div className="row">
+                    <div className="rounded col-6 text-light">
                     <Editor
                         defaultLanguage="python"
                         defaultValue="# Write your code here"
                         theme="vs-dark"
-                        className="code-editor"
                         fontFamily="'Fira Code', monospace"
                         options={{
                                 minimap: { enabled: true},  // <-- this disables the preview
@@ -33,7 +32,7 @@ export default function TheLabTop(){
                         }}
                     />
                     </div>
-                    <div className="col-lg-5 col-md8 m-3 text-white showcase-img rounded" style={{ backgroundImage: `url(${showcase1})`}} ></div>
+                    <div className="col-6 text-light showcase-img rounded" style={{ backgroundImage: `url(${showcase1})`}} ></div>
                 </div>
             </div>
         </section>
