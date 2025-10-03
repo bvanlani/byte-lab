@@ -183,8 +183,8 @@ const AsteroidsCanvas = () => {
           }
         }
 
-        const speedX = (Math.random() - 0.5) * 3;
-        const speedY = (Math.random() - 0.5) * 3;
+        const speedX = (Math.random() - 0.5) * 2;
+        const speedY = (Math.random() - 0.5) * 2;
         asteroids.push(new Asteroid(x, y, radius, speedX, speedY));
       }
       return asteroids;
