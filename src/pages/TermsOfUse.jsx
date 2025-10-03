@@ -11,7 +11,7 @@ export default function TermsOfUse(){
             <section className="terms-of-use mt-5">
                 <div className="container text-center p-5 mb-5 bg-dark text-light">
                     <h1>Terms of use for Byte Lab</h1>
-                    <p>Last updated: <em>June 15, 2025</em></p>
+                    <p>Last updated: <em>October 3rd, 2025</em></p>
                     <br />
                     <p>Welcome to Byte Lab (“Website”), an educational platform operated by the Byte Lab Computer Science Outreach Club (“we,” “us,” or “our”) at Lakeview Technology Academy. Byte Lab provides middle school students with a digital environment to learn computer science and test VEX robotics code.<br /><br />
                         By accessing or using this Website, you (“User”) agree to be bound by these Terms of Use. If you do not agree to these Terms, you are not permitted to use the Website.</p>
