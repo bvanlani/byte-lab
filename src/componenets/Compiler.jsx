@@ -1,11 +1,13 @@
+//WASM based python compiler component that allows for the devlopment of python code 
+//locally in a web browser. Built on the pyodide project and the monaco editor.
+
 //Importing the needing extensions. Need react the monaco editor and the pyodide
 import React, { useEffect, useRef } from "react";
 import { Editor } from "@monaco-editor/react";
 import { loadPyodide } from "pyodide";
 
-//Creating the compiler function
-export default function Compiler() {
-  //Getting some constants to update it. Getting the editor and the pyodide to run code
+ export default function Compiler(){
+      //Getting some constants to update it. Getting the editor and the pyodide to run code
   const editorContent = useRef(null);
   const pyodideRef = useRef(null);
   const [output, setOutput] = React.useState("This is where the output will show!");
@@ -15,7 +17,6 @@ export default function Compiler() {
     // Loading in the pyodide instance
       async function loadPyodideInstance() {
       pyodideRef.current = await loadPyodide({ indexURL: "https://cdn.jsdelivr.net/pyodide/v0.28.3/full/" });
-      console.log("Pyodide loaded!");
     }
     loadPyodideInstance();
     }, []);
@@ -23,6 +24,23 @@ export default function Compiler() {
   //Function to check if the editor is mounted and updated
   function handleEditorDidMount(editor, monaco) {
     editorContent.current = editor;
+
+    // Prevent Ctrl+V and right-click paste
+    editor.onKeyDown((e) => {
+      if ((e.ctrlKey || e.metaKey) && e.keyCode === monaco.KeyCode.KeyV) {
+        e.preventDefault();
+        alert("Be sure to write your own code!");
+      }
+    });
+
+    // Prevent mouse-based pasting (e.g., right-click → paste)
+    const domNode = editor.getDomNode();
+    if (domNode) {
+      domNode.addEventListener("paste", (e) => {
+        e.preventDefault();
+        alert("Be sure to write your own code!");
+      });
+    }
   }
 
   //Actually running the python code
@@ -61,31 +79,27 @@ ${userCode}
   } catch(err){
     //Returning error if messed up
     try{
+        //Getting the output from the error. Formatting it to be easier for user to read.
+
+        //Getting the ful error message
         const stderr = await pyodideRef.current.runPythonAsync("sys.stderr.getvalue()");
-        //console.log(stderr);
+        //Finding where the last error is and slicing to get a more compact message
         let last_line = stderr.lastIndexOf("Error");
-        console.log(last_line);
-        console.log(stderr.length);
         last_line = stderr.slice(last_line + 6, stderr.length);
-        console.log(last_line);
+        //Simplifying the error message to be more user friendly and outputting it
         let simplified = "\n---\n ERROR: " + last_line + "\n";
-        console.log(simplified);
         setOutput(("Uh oh looks like you have an error! " + simplified));
     }
     catch{
-        setOutput("Uh oh looks like you have an error! " + err.message);
+        //Broad Error catching.
+        setOutput("Something went wrong, please try again.");
     }
   }
 }
 
-//returning the compiler component.
-  return (
-    <section className="vh-100 d-flex flex-column">
-      <div className="container bg-transparent text-light text-center py-4">
-        <h1>The Lab</h1>
-      </div>
-
-      <section className ="d-flex flex-column">
+    return( 
+    //Defing the layout of the compiler component.
+    <section className ="d-flex flex-column">
             <div className="container">
                 <div className="row">
                     <div className="rounded row-12 col-12 text-light" style={{ minHeight: 300 }}>
@@ -121,16 +135,11 @@ ${userCode}
                     </div>
                 </div>
             </div>
-        </section>
-    </section>
-  );
-}
+        </section>)
+ }
 
-
-async function runPythonCode(code) {
+    async function runPythonCode(code) {
   let pyodide = null;
-
-
   try{
     
 
@@ -139,6 +148,5 @@ async function runPythonCode(code) {
   } catch(err){
     console.log(err);
   }
-
 }
   
