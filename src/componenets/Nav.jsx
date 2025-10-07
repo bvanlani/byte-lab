@@ -24,7 +24,7 @@ export default function Nav(){
                         <Link className="nav-link text-light" to="/the-lab">The Lab</Link>
                         </li>
                         <li className="nav-item">
-                        <Link className="nav-link text-light" to="/python-basics">Learn</Link>
+                        <Link className="nav-link text-light" to="/learn-page">Learn</Link>
                         </li>
                         <li className="nav-item">
                         <Link className="nav-link text-light" to="/news">News</Link>

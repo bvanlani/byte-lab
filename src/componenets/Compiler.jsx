@@ -130,7 +130,7 @@ ${userCode}
                         />
                       <button className="btn btn-primary mt-3 mb-3" onClick={() => runPythonCode()}>Run Code</button>
                     </div>
-                    <div className="rounded row-12 col-12 text-light bg-dark">
+                    <div className="text-light bg-dark" section style={{ minHeight: "30vh" }}>
                         <p>{output}</p>
                     </div>
                 </div>

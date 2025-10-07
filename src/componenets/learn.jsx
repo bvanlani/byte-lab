@@ -2,6 +2,7 @@ import Nav from "../componenets/Nav";
 import Footer from "../componenets/Footer";
 import Background from "../componenets/Background.jsx";
 import Editor from "@monaco-editor/react";
+import ColorLegend from "./ColorLegend.jsx";
 import { Link } from "react-router-dom";
 
 export default function PythonBasics() {
@@ -52,38 +53,8 @@ export default function PythonBasics() {
                     <br />
                     <p>Welcome to the Byte Lab Python Basics Guide! This page introduces the fundamental concepts of Python — including variables, conditionals, loops, and functions. Perfect for beginners learning to code for the first time.</p>
                 </div>
-                                {/* COLOR LEGEND */}
-                <div className="container text-start p-4 mb-5 bg-dark text-light rounded shadow">
-                    <h2 className="text-center mb-4">Understanding the Colors in the Code Blocks</h2>
-                    <p>The Monaco Editor uses syntax highlighting to make your code easier to read. Each color represents a different part of Python syntax:</p>
-                    <div className="row text-center mt-4">
-                        <div className="col-md-2 col-6 mb-3">
-                            <span className="d-inline-block rounded p-2" style={{ backgroundColor: '#569CD6' }}></span>
-                            <p className="mt-2 mb-0">Keywords<br /><small>(<code>if</code>, <code>for</code>, <code>def</code>)</small></p>
-                        </div>
-                        <div className="col-md-2 col-6 mb-3">
-                            <span className="d-inline-block rounded p-2" style={{ backgroundColor: '#DCDCAA' }}></span>
-                            <p className="mt-2 mb-0">Variables &amp; Names</p>
-                        </div>
-                        <div className="col-md-2 col-6 mb-3">
-                            <span className="d-inline-block rounded p-2" style={{ backgroundColor: '#CE9178' }}></span>
-                            <p className="mt-2 mb-0">Strings<br /><small>("Hello")</small></p>
-                        </div>
-                        <div className="col-md-2 col-6 mb-3">
-                            <span className="d-inline-block rounded p-2" style={{ backgroundColor: '#B5CEA8' }}></span>
-                            <p className="mt-2 mb-0">Numbers &amp; Booleans</p>
-                        </div>
-                        <div className="col-md-2 col-6 mb-3">
-                            <span className="d-inline-block rounded p-2" style={{ backgroundColor: '#6A9955' }}></span>
-                            <p className="mt-2 mb-0">Comments<br /><small>(# notes)</small></p>
-                        </div>
-                        <div className="col-md-2 col-6 mb-3">
-                            <span className="d-inline-block rounded p-2" style={{ backgroundColor: '#9CDCFE' }}></span>
-                            <p className="mt-2 mb-0">Functions &amp; Calls</p>
-                        </div>
-                    </div>
-                </div>
                 
+                <ColorLegend></ColorLegend>
                 {/* VARIABLES */}
                 <div className="container text-start p-5 mb-5 bg-dark text-light">
                     <h1>1. Variables</h1>
