@@ -8,6 +8,7 @@ import TheLab from './pages/TheLab';
 import NoPage from './pages/NoPage';
 import TermsOfUse from './pages/TermsOfUse';
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
+import PythonBasics from './componenets/learn.jsx';
 
 function App() {  
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/the-lab" element={<TheLab />} />
         <Route path="/terms-of-use" element={<TermsOfUse />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/python-basics" element={<PythonBasics />}/>
         <Route path="*" element={<NoPage />} />
       </Routes>
     </HashRouter>
