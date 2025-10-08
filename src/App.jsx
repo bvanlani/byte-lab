@@ -9,6 +9,7 @@ import NoPage from './pages/NoPage';
 import TermsOfUse from './pages/TermsOfUse';
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
 import LearnPage from './pages/learnPage.jsx';
+import News from './pages/news.jsx';
 
 function App() {  
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/terms-of-use" element={<TermsOfUse />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/learn-page" element={<LearnPage />}/>
+        <Route path="/news" element={<News />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
     </HashRouter>

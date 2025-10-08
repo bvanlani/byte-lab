@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "title": "Local Orchestra Premieres New Symphony to Standing Ovation",
+    "author": "Page Turner",
+    "date": "2025-10-08",
+    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
+    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
+    "summary": "The Lakeview Chamber Orchestra debuted its new symphony, 'Echoes of Autumn,' to a full house. The blend of classical and modern motifs earned a standing ovation.",
+    "content": ""
+  },
+  {
+    "id": 2,
+    "title": "Tech Students Build AI-Powered Weather Predictor",
+    "author": "Alex Byte",
+    "date": "2025-10-07",
+    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
+    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
+    "summary": "Computer science students developed an AI tool that predicts short-term weather patterns using machine learning and public meteorological datasets.",
+    "content": ""
+  },
+  {
+    "id": 3,
+    "title": "Community Volunteers Restore Historic Amphitheater",
+    "author": "Sandy Field",
+    "date": "2025-10-06",
+    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
+    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
+    "summary": "Over twenty volunteers joined forces to clean, repair, and rebuild the aging benches of a local outdoor amphitheater, breathing new life into the venue.",
+    "content": ""
+  },
+  {
+    "id": 4,
+    "title": "Math Club Takes First Place in Regional Contest",
+    "author": "Riley Numbers",
+    "date": "2025-10-05",
+    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
+    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
+    "summary": "The LakeView Math Club earned top honors at the Wisconsin Math Council competition, showcasing creativity and problem-solving beyond traditional classroom math.",
+    "content": ""
+  },
+  {
+    "id": 5,
+    "title": "Student-Led Theater Troupe Sells Out Opening Night",
+    "author": "Dramma Queen",
+    "date": "2025-10-04",
+    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
+    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
+    "summary": "The Lakeview Theater Troupe’s original play, 'Curtain Call,' packed the house on opening night with laughter, emotion, and a standing ovation.",
+    "content": ""
+  },
+  {
+    "id": 6,
+    "title": "LakeView Tech Launches Innovative Web Development Course",
+    "author": "Dev Lin",
+    "date": "2025-10-03",
+    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
+    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
+    "summary": "Students are diving into modern web frameworks, version control, and design systems in LakeView’s new project-based web development course.",
+    "content": ""
+  },
+  {
+    "id": 7,
+    "title": "AP Chemistry Class Conducts Spectacular Flame Tests",
+    "author": "Crystal Bond",
+    "date": "2025-10-02",
+    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
+    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
+    "summary": "Colorful flames illuminated the lab as students analyzed emission spectra to identify elements — a highlight of this year’s AP Chemistry curriculum.",
+    "content": ""
+  },
+  {
+    "id": 8,
+    "title": "Outdoor Club Wraps Up Successful Fall Camping Trip",
+    "author": "Forest Hiker",
+    "date": "2025-10-01",
+    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
+    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
+    "summary": "Members enjoyed a weekend of hiking, fishing, and team-building in Wisconsin’s Northwoods, marking the club’s most attended trip yet.",
+    "content": ""
+  },
+  {
+    "id": 9,
+    "title": "LakeView Students Explore Statistics Through Sports Data",
+    "author": "Stat McGraph",
+    "date": "2025-09-30",
+    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
+    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
+    "summary": "AP Statistics students used real MLB and NBA datasets to study probability distributions and correlation — bringing math to life through sports.",
+    "content": ""
+  },
+  {
+    "id": 10,
+    "title": "Computer Science Club Hosts Coding Marathon",
+    "author": "Code Wright",
+    "date": "2025-09-29",
+    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
+    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
+    "summary": "Students spent 12 hours straight designing apps, websites, and games during the school’s annual Code-A-Thon — caffeine and creativity flowed freely.",
+    "content": ""
+  }
+]
