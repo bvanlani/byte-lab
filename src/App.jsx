@@ -10,6 +10,7 @@ import TermsOfUse from './pages/TermsOfUse';
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
 import LearnPage from './pages/learnPage.jsx';
 import News from './pages/news.jsx';
+import ContactUs from './pages/ContactUs.jsx';
 
 function App() {  
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/learn-page" element={<LearnPage />}/>
         <Route path="/news" element={<News />} />
+        <Route path="/contact-us" element={<ContactUs />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
     </HashRouter>

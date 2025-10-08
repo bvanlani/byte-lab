@@ -30,7 +30,7 @@ export default function Nav(){
                         <Link className="nav-link text-light" to="/news">News</Link>
                         </li>
                         <li className="nav-item">
-                        <Link className="nav-link text-light" to="/contact">Contact</Link>
+                        <Link className="nav-link text-light" to="/contact-us">Contact</Link>
                         </li>
                     </ul>
                 </div>                

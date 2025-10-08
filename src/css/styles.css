@@ -2000,15 +2000,16 @@ progress {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #ced4da;
+  color: #008080;
+  background-color: #17191c;
+  border:none;
+  /*background-clip: padding-box;
+  border: 2px solid #008080;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   border-radius: 0.375rem;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;*/
 }
 @media (prefers-reduced-motion: reduce) {
   .form-control {
@@ -2022,11 +2023,11 @@ progress {
   cursor: pointer;
 }
 .form-control:focus {
-  color: #212529;
-  background-color: #fff;
-  border-color: #86b7fe;
+  /*color: #212529;
+  background-color: #fff;*/
+  border-color: #00c0c0;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  /*box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);*/
 }
 .form-control::-webkit-date-and-time-value {
   height: 1.5em;
@@ -2040,7 +2041,7 @@ progress {
   opacity: 1;
 }
 .form-control:disabled {
-  background-color: #e9ecef;
+  /*background-color: #e9ecef;*/
   opacity: 1;
 }
 .form-control::file-selector-button {
@@ -10970,4 +10971,8 @@ footer.footer {
   aspect-ratio: 1/1;
   border-radius:50%;
   box-shadow: 2px 2px 5px 0px #000;
+}
+
+.form-content {
+  max-height:20rem;
 }
