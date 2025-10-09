@@ -164,7 +164,6 @@ function saveStringAsFile(filename, content) {
                                 verticalScrollbarSize: 12,
                                 horizontalScrollbarSize: 12,
                         },
-                         
                         }}
                         />
                       <button className="btn btn-primary mt-3 mb-3" onClick={() => runPythonCode()}>Run Code</button>

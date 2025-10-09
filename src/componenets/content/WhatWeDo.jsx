@@ -1,7 +1,9 @@
+//These are the images in the landing page
 import showcase1 from '../assets/bg-showcase-1.jpg'
 import showcase2 from '../assets/bg-showcase-2.jpg'
 import showcase3 from '../assets/bg-showcase-3.jpg' 
 
+//Returning the landing page images and description.
 export default function WhatWeDo(){
     return(
         <section className="showcase">

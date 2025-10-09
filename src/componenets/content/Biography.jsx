@@ -1,9 +1,17 @@
+/* All jsx files in the content section are basically just big HTML/text documents
+This one is the biography with the portraits of everyone who is running byte Labs 
+*/
+
+
+//Grabbing the pictures
 import BethanPortrait from '../assets/BethanPortrait.png';
 import candid2 from '../assets/testimonials-2.jpg';
 import candid3 from '../assets/testimonials-3.jpg';
 //import candid4 from '../assets/testimonials-4.jpg';
 //import candid5 from '../assets/testimonials-5.jpg';
 
+
+//Returning the biography website.
 export default function Biography(){
     return(
         <section className="testimonials text-center bg-dark">
@@ -28,7 +36,7 @@ export default function Biography(){
                     <div className="testimonial-item mx-auto mb-5 mb-lg-0">
                         <img className="img-fluid rounded-circle mb-3" src={candid3} alt="..." />
                         <h5 className="text-light">Conner O.</h5>
-                        <p className="text-light"><em>I have 5+ years of background. I have made my own games and custom automation scripts.</em></p>
+                        <p className="text-light"><em>I have 5+ years of background. I have made my own games custom automation scripts and websites.</em></p>
                     </div>
                 </div>
                 <div className="col-lg-2">

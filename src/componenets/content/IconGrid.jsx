@@ -1,3 +1,9 @@
+/* All jsx files in the content section are basically just big HTML/text documents
+This one is the icons that are on the homepage as well as the text underneath them.
+*/
+
+
+//Returning the Icon Grid document
 export default function IconGrid(){
     return(
         <section className="features-icons bg-dark text-center">

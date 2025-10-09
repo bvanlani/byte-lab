@@ -1,7 +1,14 @@
-import Nav from '../componenets/Nav.jsx'
-import Footer from '../componenets/Footer.jsx'
-import Background from '../componenets/Background.jsx'
+/*
+Page for if the user ends up on a non existint webpage. Displays 404 error.
+*/
 
+
+//Importing the required components.
+import Nav from '../componenets/layout/Nav.jsx'
+import Footer from '../componenets/layout/Footer.jsx'
+import Background from '../componenets/effects/Background.jsx'
+
+//Returning the components as well as the rest of the error screen.
 export default function NoPage(){
     return(
         <>
