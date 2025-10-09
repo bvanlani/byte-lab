@@ -10,7 +10,7 @@ import TheLab from './pages/TheLab';
 import NoPage from './pages/NoPage';
 import TermsOfUse from './pages/TermsOfUse';
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
-import LearnPage from './componenets/learn.jsx';
+import LearnPage from './pages/LearnPage.jsx';
 import News from './pages/news.jsx';
 import ContactUs from './pages/ContactUs.jsx';
 import Article from './pages/Article.jsx';
@@ -24,7 +24,7 @@ export default function App() {
         <Route path="/the-lab" element={<TheLab />} />
         <Route path="/terms-of-use" element={<TermsOfUse />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/learn-page" element={<LearnPage />}/>
+        <Route path="/learn-page" element={<LearnPage/>}/>
         <Route path="/news" element={<News />} />
         <Route path="/news/:id" element={<Article />} />
         <Route path="/contact-us" element={<ContactUs />} />

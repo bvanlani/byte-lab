@@ -12,9 +12,9 @@ export default function LearnPage(){
     return(
         <>
         <Background />
-        <Nav />
+        <Nav/>
         <PythonBasics></PythonBasics>
-        <Footer />
+        <Footer/>
         </>
     )
 }

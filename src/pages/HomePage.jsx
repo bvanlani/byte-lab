@@ -9,7 +9,7 @@ import WhatWeDo from '../componenets/content/WhatWeDo.jsx';
 import Biography from '../componenets/content/Biography.jsx';
 import Footer from '../componenets/layout/Footer.jsx';
 import Background from '../componenets/effects/Background.jsx';
-import HomeToNews from  '../componenets/HomeToNews.jsx';
+import HomeToNews from  '../componenets/content/HomeToNews.jsx';
 
 //Creating the homepage and combining the components.
 export default function HomePage(){
