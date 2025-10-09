@@ -1,8 +1,12 @@
+
+//Grabbing the linking tool to send to article.
 import { Link } from "react-router-dom";
 
-import articles from "../data/articles.json"
+//Grabbing the articles from the data.
+import articles from "../../data/articles.json"
 const article = articles[articles.length - 1];
 
+//Returning the component
 export default function Headliner(){
     return(
         <section className="headliner">

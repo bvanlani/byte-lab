@@ -1,8 +1,11 @@
+
+//Grabbing the pictuers to show in the list
 import thumbnail from "../assets/bg-showcase-3.jpg"
 import authorImg from "../assets/testimonials-2.jpg"
-import articles from "../data/articles.json"
+import articles from "../../data/articles.json"
 import {Link} from 'react-router-dom';
 
+//Formatting list to return as complete component
 export default function ArticleList(){
     return(
         <>

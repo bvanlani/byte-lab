@@ -1,5 +1,9 @@
+/* Component that links from the current page over to the news page. Fully complete GUI */
+
+//Grabbing linking to be able to send between pages
 import {Link} from 'react-router-dom';
 
+//Returning the component
 export default function HomeToNews(){
     return(
         <section className="home-to-news">
