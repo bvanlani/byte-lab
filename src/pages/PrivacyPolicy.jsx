@@ -1,6 +1,7 @@
 import Background from "../componenets/Background";
 import Nav from "../componenets/Nav";
 import Footer from "../componenets/Footer";
+import { Link } from "react-router-dom";
 
 export default function PrivacyPolicy(){
     return(
@@ -57,7 +58,7 @@ export default function PrivacyPolicy(){
                         <li>Ask us to delete their child’s account or information.</li>
                         <li>Refuse any further collection or use of their child’s information.</li>
                     </ul>
-                    <p>Parents can contact us at <em>ben.vanlaningham@gmail.com</em></p>
+                    <p>Parents can contact us at <a href="mailto:byteslabscs@gmail.com" className="text-light text-decoration-none fw-bold fst-italic">bytelabscs@gmail.com</a> or reach out through our <Link to="/contact-us" className="text-light text-decoration-none fw-bold fst-italic">contact-us form.</Link></p>
                 </div>
                 <div className="container text-center p-5 mb-5 bg-dark text-light">
                     <h1>Cookies & Tracking</h1>
@@ -77,7 +78,7 @@ export default function PrivacyPolicy(){
                 <div className="container text-center p-5 mb-5 bg-dark text-light">
                     <h1>Contact Information</h1>
                     <br />
-                    <p>For questions or concerns regarding this policy, please contact the Byte Lab team at <em>ben.vanlaningham@gmail.com</em>.</p>
+                    <p>For questions or concerns regarding this policy, please contact the Byte Lab team at <a href="mailto:byteslabscs@gmail.com" className="text-light text-decoration-none fw-bold fst-italic">bytelabscs@gmail.com</a> or reach out through our <Link to="/contact-us" className="text-light text-decoration-none fw-bold fst-italic">contact-us form.</Link></p>
                 </div>
             </section>
             <Footer />

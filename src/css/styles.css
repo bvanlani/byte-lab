@@ -10976,7 +10976,7 @@ footer.footer {
 
 .author-img{
   background-size:cover;
-  min-width:2rem;
+  min-height:3rem;
   aspect-ratio: 1/1;
   border-radius:50%;
   box-shadow: 2px 2px 5px 0px #000;

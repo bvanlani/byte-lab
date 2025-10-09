@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export default function PythonBasics() {
     // A reusable component for consistent editor styling
     const CodeBox = ({ code }) => (
-        <div className="border rounded bg-dark my-3">
+        <div className="rounded bg-dark my-3">
             <Editor
                 height="200px"
                 defaultLanguage="python"
@@ -17,15 +17,16 @@ export default function PythonBasics() {
                 readOnly={true}
                 options={{
                     readOnly: true,
-                    minimap: { enabled: true },
+                    minimap: { enabled: false },
                     fontSize: 15,
                     scrollBeyondLastLine: false,
                     lineNumbers: "on",
-                    roundedSelection: false,
+                    roundedSelection: true,
                     cursorStyle: "line",
                     contextmenu: false,
                     domReadOnly: true,
-                    automaticLayout: true
+                    automaticLayout: true,
+                    alwaysConsumeMouseWheel: false
                 }}
             />
         </div>
@@ -67,6 +68,7 @@ is_student = True
 
 print(name)        # Output: Alex
 print(age + 1)     # Output: 16`} />
+                    <br />
                 </div>
 
                 {/* PRINT & INPUT */}

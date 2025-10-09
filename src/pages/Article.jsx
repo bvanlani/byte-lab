@@ -28,7 +28,7 @@ export default function Article(){
             <Nav />
             <section className="article-page">
                 <div className="container my-5 mx-auto p-5 bg-dark d-flex flex-column align-items-center rounded text-light">
-                    <button className="btn btn-primary px-5 highlight mt-3"><Link to="/news" className="text-light text-decoration-none">Back to News</Link></button>
+                    <Link to="/news" className="text-light text-decoration-none"><button className="btn btn-primary px-5 highlight mt-3">Back to News</button></Link>
                     <img src={article.thumbnail} alt="Thumbnail Image" className="full-size-img rounded py-5"></img>
                     <h1>{article.title}</h1>
                     <div className="d-flex justify-content-between w-100 px-5 mt-3">
@@ -39,7 +39,7 @@ export default function Article(){
                             <p className="text-muted">{article.date}</p>
                     </div>
                     <div dangerouslySetInnerHTML={{ __html: article.content }} className="p-5 fs-4"/>
-                    <button className="btn btn-primary px-5 highlight mt-3"><Link to="/news" className="text-light text-decoration-none">Back to News</Link></button>
+                    <Link to="/news" className="text-light text-decoration-none"><button className="btn btn-primary px-5 highlight mt-3">Back to News</button></Link>
                 </div>
             </section>
             <Footer />

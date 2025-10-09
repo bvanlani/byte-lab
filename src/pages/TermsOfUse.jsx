@@ -44,7 +44,7 @@ export default function TermsOfUse(){
                 <div className="container text-center p-5 mb-5 bg-dark text-light">
                     <h1>Privacy Policy</h1>
                     <br />
-                    <p>Byte Lab does not collect personal information beyond what is necessary to support educational activities. Data may be monitored by mentors and teachers to ensure appropriate use and to support learning. For more information, please refer to our <Link to="/privacy-policy">Privacy Policy.</Link></p>
+                    <p>Byte Lab does not collect personal information beyond what is necessary to support educational activities. Data may be monitored by mentors and teachers to ensure appropriate use and to support learning. For more information, please refer to our <Link to="/privacy-policy" className="fw-bold text-light text-decoration-none fst-italic">Privacy Policy.</Link></p>
                 </div>
                 <div className="container text-center p-5 mb-5 bg-dark text-light">
                     <h1>Intellectual Property</h1>
@@ -69,7 +69,7 @@ export default function TermsOfUse(){
                 <div className="container text-center p-5 mb-5 bg-dark text-light">
                     <h1>Contact Information</h1>
                     <br />
-                    <p>For questions or concerns regarding these Terms, please contact the Byte Lab team at <em>ben.vanlaningham@gmail.com</em>.</p>
+                    <p>For questions or concerns regarding these Terms, please contact the Byte Lab team at <a href="mailto:byteslabscs@gmail.com" className="text-light text-decoration-none fw-bold fst-italic">bytelabscs@gmail.com</a> or reach out through our <Link to="/contact-us" className="text-light text-decoration-none fw-bold fst-italic">contact-us form.</Link></p>
                 </div>
             </section>
             <Footer />
