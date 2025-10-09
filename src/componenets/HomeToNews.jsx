@@ -1,19 +1,19 @@
 import {Link} from 'react-router-dom';
 
-export default function Header(){
+export default function HomeToNews(){
     return(
-        <header className="masthead text-white text-center">
+        <section className="home-to-news">
             <div className="container position-relative">
                 <div className="row justify-content-center">
                     <div className="col-xl-6">
                         <div className="text-center text-light">
-                            <h1>Welcome to Byte Lab!</h1> 
-                            <h2 className="mb-3"><em>Inpsire, Innovate, Impact</em></h2>
-                            <Link className="btn btn-primary px-5 highlight" to="/the-lab">The Lab</Link>
+                            <h1>See What's Happening</h1> 
+                            <h2 className="mb-3"><em>Explore our latest events, blog posts, and updates!</em></h2>
+                            <Link className="btn btn-primary px-5 highlight" to="/news">Visit News</Link>
                         </div>
                     </div>
                 </div>
             </div>
-        </header>
+        </section>
     )
 }

@@ -11,9 +11,9 @@ import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
 import LearnPage from './pages/learnPage.jsx';
 import News from './pages/news.jsx';
 import ContactUs from './pages/ContactUs.jsx';
+import Article from './pages/Article.jsx';
 
-function App() {  
-
+export default function App() {  
   return (
     <HashRouter>
       <ScrollToTop />
@@ -24,11 +24,10 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/learn-page" element={<LearnPage />}/>
         <Route path="/news" element={<News />} />
+        <Route path="/news/:id" element={<Article />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
     </HashRouter>
   )
 }
-
-export default App

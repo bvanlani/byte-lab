@@ -27,10 +27,10 @@ export default function WhatWeDo(){
                 <div className="row g-0 bg-dark-secondary">
                     <div className="col-lg-6 order-lg-2 text-white showcase-img" style={{ backgroundImage: `url(${showcase3})` }}></div>
                     <div className="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2 className="text-light">What's New</h2>
-                        <p className="lead mb-0 text-light">
-                            Here you will find the latest updtates from Byte Lab.
-                        </p>
+                        <h2 className="text-light">Our Impact</h2>
+                            <p className="lead mb-0 text-light">
+                                Byte Lab has introduced dozens of middle schoolers to programming and robotics. Through workshops, mentorship, and community outreach, we help students gain confidence in problem-solving and prepare them for future STEM opportunities.
+                            </p>
                     </div>
                 </div>
             </div>

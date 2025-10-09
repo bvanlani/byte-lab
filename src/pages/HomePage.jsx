@@ -6,6 +6,7 @@ import SectionSplit from '../componenets/SectionSplit.jsx'
 import Biography from '../componenets/Biography.jsx'
 import Footer from '../componenets/Footer.jsx'
 import Background from '../componenets/Background.jsx'
+import HomeToNews from '../componenets/HomeToNews.jsx'
 
 export default function HomePage(){
     return(
@@ -15,6 +16,7 @@ export default function HomePage(){
             <Header />
             <IconGrid />
             <WhatWeDo />
+            <HomeToNews />
             <Biography />
             <Footer />
         </>

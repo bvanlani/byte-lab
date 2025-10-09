@@ -1,86 +1,16 @@
 [
   {
-    "id": 1,
-    "title": "Local Orchestra Premieres New Symphony to Standing Ovation",
-    "author": "Page Turner",
-    "date": "2025-10-08",
-    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
-    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
-    "summary": "The Lakeview Chamber Orchestra debuted its new symphony, 'Echoes of Autumn,' to a full house. The blend of classical and modern motifs earned a standing ovation.",
-    "content": ""
+  "id": 1,
+  "title": "Computer Science Club Hosts Coding Marathon",
+  "author": "Code Wright",
+  "date": "2025-09-29",
+  "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
+  "authorImg": "/byte-lab/assets/testimonials-2.jpg",
+  "summary": "Students spent 12 hours straight designing apps, websites, and games during the school’s annual Code-A-Thon — caffeine and creativity flowed freely.",
+  "content": "<p>The LakeView Technology Academy’s Computer Science Club held its highly anticipated annual <strong>Code-A-Thon</strong> on Saturday, September 28, drawing dozens of students eager to test their programming skills in a collaborative and high-energy environment. The 12-hour event, which began at 8:00 a.m. and concluded just before midnight, challenged participants to design and develop original software projects under tight time constraints.</p>\n\n<p>Throughout the day, teams of two to five students worked diligently on a wide array of projects, ranging from web-based productivity tools to interactive video games. The atmosphere inside the school’s commons area was one of intense concentration and excitement. Students huddled around laptops, surrounded by whiteboards filled with diagrams, UI mockups, and snippets of hastily written pseudocode. Periodic bursts of laughter and applause punctuated the sound of rapid keyboard clicks as participants celebrated breakthroughs and solved difficult bugs.</p>\n\n<p>The event opened with remarks from Computer Science Club president <strong>Ben Taylor</strong>, who emphasized the importance of innovation and teamwork. “The Code-A-Thon isn’t just about writing code—it’s about learning how to think critically and solve problems creatively,” he said. Club advisor <strong>Mrs. Larson</strong> echoed those sentiments, noting that the event provides a valuable opportunity for students to engage in real-world applications of classroom concepts. “This kind of hands-on collaboration builds both technical skill and leadership,” she remarked.</p>\n\n<p>As the day progressed, students showcased remarkable ingenuity. One team developed <em>CampusConnect</em>, a mobile app designed to help students find study partners based on shared classes and available time slots. Another group created <em>EcoSort</em>, a web-based educational game teaching players how to recycle correctly. Judges, including members of the school’s STEM faculty and local software engineers, evaluated each project on criteria such as originality, user experience, and technical execution.</p>\n\n<p>When the final scores were tallied, <em>CampusConnect</em> was awarded first place for its innovative design and real-world practicality. Team members received Raspberry Pi development kits and certificates of achievement. In her closing remarks, Mrs. Larson commended all participants for their dedication and perseverance, stating, “The level of professionalism and creativity displayed today was extraordinary. Every team demonstrated what makes LakeView students stand out.”</p>\n\n<p>Following the success of this year’s Code-A-Thon, the Computer Science Club has already begun discussing plans to expand the event into a district-wide competition in 2026. With growing student interest and community support, organizers hope the event will continue to foster collaboration, technical excellence, and a passion for innovation among future generations of young programmers.</p>"
   },
   {
     "id": 2,
-    "title": "Tech Students Build AI-Powered Weather Predictor",
-    "author": "Alex Byte",
-    "date": "2025-10-07",
-    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
-    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
-    "summary": "Computer science students developed an AI tool that predicts short-term weather patterns using machine learning and public meteorological datasets.",
-    "content": ""
-  },
-  {
-    "id": 3,
-    "title": "Community Volunteers Restore Historic Amphitheater",
-    "author": "Sandy Field",
-    "date": "2025-10-06",
-    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
-    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
-    "summary": "Over twenty volunteers joined forces to clean, repair, and rebuild the aging benches of a local outdoor amphitheater, breathing new life into the venue.",
-    "content": ""
-  },
-  {
-    "id": 4,
-    "title": "Math Club Takes First Place in Regional Contest",
-    "author": "Riley Numbers",
-    "date": "2025-10-05",
-    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
-    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
-    "summary": "The LakeView Math Club earned top honors at the Wisconsin Math Council competition, showcasing creativity and problem-solving beyond traditional classroom math.",
-    "content": ""
-  },
-  {
-    "id": 5,
-    "title": "Student-Led Theater Troupe Sells Out Opening Night",
-    "author": "Dramma Queen",
-    "date": "2025-10-04",
-    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
-    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
-    "summary": "The Lakeview Theater Troupe’s original play, 'Curtain Call,' packed the house on opening night with laughter, emotion, and a standing ovation.",
-    "content": ""
-  },
-  {
-    "id": 6,
-    "title": "LakeView Tech Launches Innovative Web Development Course",
-    "author": "Dev Lin",
-    "date": "2025-10-03",
-    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
-    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
-    "summary": "Students are diving into modern web frameworks, version control, and design systems in LakeView’s new project-based web development course.",
-    "content": ""
-  },
-  {
-    "id": 7,
-    "title": "AP Chemistry Class Conducts Spectacular Flame Tests",
-    "author": "Crystal Bond",
-    "date": "2025-10-02",
-    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
-    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
-    "summary": "Colorful flames illuminated the lab as students analyzed emission spectra to identify elements — a highlight of this year’s AP Chemistry curriculum.",
-    "content": ""
-  },
-  {
-    "id": 8,
-    "title": "Outdoor Club Wraps Up Successful Fall Camping Trip",
-    "author": "Forest Hiker",
-    "date": "2025-10-01",
-    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
-    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
-    "summary": "Members enjoyed a weekend of hiking, fishing, and team-building in Wisconsin’s Northwoods, marking the club’s most attended trip yet.",
-    "content": ""
-  },
-  {
-    "id": 9,
     "title": "LakeView Students Explore Statistics Through Sports Data",
     "author": "Stat McGraph",
     "date": "2025-09-30",
@@ -90,13 +20,83 @@
     "content": ""
   },
   {
-    "id": 10,
-    "title": "Computer Science Club Hosts Coding Marathon",
-    "author": "Code Wright",
-    "date": "2025-09-29",
+    "id": 3,
+    "title": "Outdoor Club Wraps Up Successful Fall Camping Trip",
+    "author": "Forest Hiker",
+    "date": "2025-10-01",
     "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
     "authorImg": "/byte-lab/assets/testimonials-2.jpg",
-    "summary": "Students spent 12 hours straight designing apps, websites, and games during the school’s annual Code-A-Thon — caffeine and creativity flowed freely.",
+    "summary": "Members enjoyed a weekend of hiking, fishing, and team-building in Wisconsin’s Northwoods, marking the club’s most attended trip yet.",
+    "content": ""
+  },
+  {
+    "id": 4,
+    "title": "AP Chemistry Class Conducts Spectacular Flame Tests",
+    "author": "Crystal Bond",
+    "date": "2025-10-02",
+    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
+    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
+    "summary": "Colorful flames illuminated the lab as students analyzed emission spectra to identify elements — a highlight of this year’s AP Chemistry curriculum.",
+    "content": ""
+  },
+  {
+    "id": 5,
+    "title": "LakeView Tech Launches Innovative Web Development Course",
+    "author": "Dev Lin",
+    "date": "2025-10-03",
+    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
+    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
+    "summary": "Students are diving into modern web frameworks, version control, and design systems in LakeView’s new project-based web development course.",
+    "content": ""
+  },
+  {
+    "id": 6,
+    "title": "Student-Led Theater Troupe Sells Out Opening Night",
+    "author": "Dramma Queen",
+    "date": "2025-10-04",
+    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
+    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
+    "summary": "The Lakeview Theater Troupe’s original play, 'Curtain Call,' packed the house on opening night with laughter, emotion, and a standing ovation.",
+    "content": ""
+  },
+  {
+    "id": 7,
+    "title": "Math Club Takes First Place in Regional Contest",
+    "author": "Riley Numbers",
+    "date": "2025-10-05",
+    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
+    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
+    "summary": "The LakeView Math Club earned top honors at the Wisconsin Math Council competition, showcasing creativity and problem-solving beyond traditional classroom math.",
+    "content": ""
+  },
+  {
+    "id": 8,
+    "title": "Community Volunteers Restore Historic Amphitheater",
+    "author": "Sandy Field",
+    "date": "2025-10-06",
+    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
+    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
+    "summary": "Over twenty volunteers joined forces to clean, repair, and rebuild the aging benches of a local outdoor amphitheater, breathing new life into the venue.",
+    "content": ""
+  },
+  {
+    "id": 9,
+    "title": "Tech Students Build AI-Powered Weather Predictor",
+    "author": "Alex Byte",
+    "date": "2025-10-07",
+    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
+    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
+    "summary": "Computer science students developed an AI tool that predicts short-term weather patterns using machine learning and public meteorological datasets.",
+    "content": ""
+  },
+  {
+    "id": 10,
+    "title": "Local Orchestra Premieres New Symphony to Standing Ovation",
+    "author": "Page Turner",
+    "date": "2025-10-08",
+    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
+    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
+    "summary": "The Lakeview Chamber Orchestra debuted its new symphony, 'Echoes of Autumn,' to a full house. The blend of classical and modern motifs earned a standing ovation.",
     "content": ""
   }
 ]

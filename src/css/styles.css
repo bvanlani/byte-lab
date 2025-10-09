@@ -8170,7 +8170,7 @@ textarea.form-control-lg {
 }
 .bg-dark-secondary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-dark-secondary-rgb), var(--bs-bg-opacity)) !important;
+  background-color: rgba(var(--bs-dark-secondary-rgb), var(--bs-bg-opacity)); /* used to say important */
 }
 
 .bg-black {
@@ -10947,6 +10947,15 @@ footer.footer {
   padding: 3rem 0;
 }
 
+.article:hover > div{
+  background-color: #181b1e;
+  transition: background-color 0.3s;
+}
+
+.article > div{
+  transition: background-color 0.3s;
+}
+
 .headline-img {
   min-height: 15rem;
 }
@@ -10975,4 +10984,17 @@ footer.footer {
 
 .form-content {
   max-height:20rem;
+}
+
+.home-to-news {
+  padding: 8rem;
+  background-color: #00000040;
+}
+
+.highlight {
+  box-shadow: 0px 0px 10px 0px #008080;
+}
+
+.full-size-img {
+  min-height: 40rem;
 }

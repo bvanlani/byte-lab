@@ -53,7 +53,7 @@ const AsteroidsCanvas = () => {
         this.y += this.speedY;
         this.rotationAngle += this.rotationSpeed;
 
-        const margin = 50;
+        const margin = this.radius*2;
         if (this.x < -margin) this.x = canvas.width + margin;
         if (this.x > canvas.width + margin) this.x = -margin;
         if (this.y < -margin) this.y = canvas.height + margin;
