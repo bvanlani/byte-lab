@@ -1,6 +1,4 @@
-import Nav from "../componenets/Nav";
 import Footer from "../componenets/Footer";
-import Background from "../componenets/Background.jsx";
 import Editor from "@monaco-editor/react";
 import ColorLegend from "./ColorLegend.jsx";
 import { Link } from "react-router-dom";
@@ -43,8 +41,6 @@ export default function PythonBasics() {
 
     return (
         <>
-            <Background />
-            <Nav />
             <section className="python-guide mt-5">
                 {/* Intro Section */}
                 <div className="container text-center p-5 mb-5 bg-dark text-light">
@@ -151,7 +147,6 @@ greet("Sofia")`} />
                     <p>Now that you know the basics, try combining these concepts! You can write a guessing game, calculator, or story generator. Visit <Link to="/the-lab">The Lab</Link> to experiment with your new skills.</p>
                 </div>
             </section>
-            <Footer />
         </>
     );
 }
