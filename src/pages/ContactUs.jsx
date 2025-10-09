@@ -1,7 +1,7 @@
-import Nav from '../componenets/Nav';
-import Footer from '../componenets/Footer';
+import Nav from '../componenets/layout/Nav';
+import Footer from '../componenets/layout/Footer';
 import ContactUsForm from '../componenets/ContactUsForm.jsx';
-import Background from '../componenets/Background.jsx';
+import Background from '../componenets/effects/Background.jsx';
 
 export default function ContactUs(){
     return(

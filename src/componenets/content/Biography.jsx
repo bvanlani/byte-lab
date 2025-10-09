@@ -4,9 +4,9 @@ This one is the biography with the portraits of everyone who is running byte Lab
 
 
 //Grabbing the pictures
-import BethanPortrait from '../assets/BethanPortrait.png';
-import candid2 from '../assets/testimonials-2.jpg';
-import candid3 from '../assets/testimonials-3.jpg';
+import BethanPortrait from '../../assets/BethanPortrait.png';
+import candid2 from '../../assets/testimonials-2.jpg';
+import candid3 from '../../assets/testimonials-3.jpg';
 //import candid4 from '../assets/testimonials-4.jpg';
 //import candid5 from '../assets/testimonials-5.jpg';
 

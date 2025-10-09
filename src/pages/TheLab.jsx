@@ -7,9 +7,9 @@ execute their programs. It is a python based terminal with a beginner focused UI
 import Nav from '../componenets/layout/Nav.jsx'
 import Background from '../componenets/effects/Background.jsx'
 import Footer from '../componenets/layout/Footer.jsx'
-import Compiler from "./Compiler";
-import ColorLegend from "./content/ColorLegend";
-import SectionSplit from "./SectionSplit";
+import Compiler from "../componenets/Compiler.jsx";
+import ColorLegend from "../componenets/content/ColorLegend.jsx";
+import SectionSplit from "../componenets/layout/SectionSplit";
 //Formatting the page and adding all of the compoenents.
 export default function TheLab(){
     return(

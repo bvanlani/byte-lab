@@ -1,8 +1,8 @@
 import { useParams, Link } from "react-router-dom";
 
-import Nav from "../componenets/Nav"
-import Footer from "../componenets/Footer"
-import Background from "../componenets/Background"
+import Nav from "../componenets/layout/Header"
+import Footer from "../componenets/layout/Footer"
+import Background from "../componenets/effects/Background"
 
 import articles from "../data/articles.json";
 

@@ -1,8 +1,7 @@
-import Nav from "../componenets/Nav";
-import Footer from "../componenets/Footer";
-import Background from "../componenets/Background.jsx";
+import Nav from "../componenets/layout/Nav";
+import Footer from "../componenets/layout/Footer";
+import Background from "../componenets/effects/Background.jsx";
 import Headliner from "../componenets/Headliner.jsx";
-import SectionSplit from "../componenets/SectionSplit.jsx";
 import ArticleList from "../componenets/ArticleList.jsx";
 
 export default function News(){
