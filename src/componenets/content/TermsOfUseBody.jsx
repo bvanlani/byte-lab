@@ -1,5 +1,8 @@
+/* All jsx files in the content section are basically just big HTML/text documents
+This one highlights the terms of use for the end users to follow. Essentially a EULA.
+*/
 
-
+//Returning the document
 export default function TermsOfUseBody(){
     return(
         <>

@@ -1,16 +1,19 @@
+
+//Importing the react packages for routing.
 import React from 'react';
 import {HashRouter, Routes, Route} from 'react-router-dom';
 
-import ScrollToTop from './componenets/ScrollToTop.jsx';
-
+//Importing all of the components to form a cohesive website.
+import ScrollToTop from './componenets/effects/ScrollToTop.jsx';
 import HomePage from './pages/HomePage';
 import TheLab from './pages/TheLab';
 import NoPage from './pages/NoPage';
 import TermsOfUse from './pages/TermsOfUse';
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
-import LearnPage from './pages/learnPage.jsx';
+import LearnPage from './pages/LearnPage.jsx';
 
-function App() {  
+//Compiling the cohesive website and guiding the user to each page.
+export default function App() {  
 
   return (
     <HashRouter>
@@ -26,5 +29,3 @@ function App() {
     </HashRouter>
   )
 }
-
-export default App

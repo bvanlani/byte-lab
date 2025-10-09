@@ -1,6 +1,9 @@
- 
- export default function ColorLegend(){
+ /* All jsx files in the content section are basically just big HTML/text documents
+This one is the color legend that shows the students what the colors in the IDE mean.
+*/
 
+//Returning the document component
+ export default function ColorLegend(){
     return (
         <>
             {/* COLOR LEGEND */}

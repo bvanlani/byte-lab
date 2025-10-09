@@ -1,5 +1,8 @@
+/* All jsx files in the content section are basically just big HTML/text documents
+This one is the privacy policy outlining the privacy on the bytelabs website
+*/
 
-
+//Returning the Privacy Policy document
 export default function PrivacyPolicyBody(){
     return(
         <>

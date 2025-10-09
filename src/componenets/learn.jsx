@@ -1,6 +1,6 @@
-import Footer from "../componenets/Footer";
+import Footer from "./layout/Footer.jsx";
 import Editor from "@monaco-editor/react";
-import ColorLegend from "./ColorLegend.jsx";
+import ColorLegend from "./content/ColorLegend.jsx";
 import { Link } from "react-router-dom";
 
 export default function PythonBasics() {
@@ -29,6 +29,7 @@ export default function PythonBasics() {
         </div>
     );
 
+    //Monaco editor config when it loads in
      function handleEditorDidMount(editor, monaco) {
         // Disable editing fully
         editor.updateOptions({ readOnly: true });
@@ -38,7 +39,7 @@ export default function PythonBasics() {
         editor.onDidAttemptReadOnlyEdit(() => editor.trigger('', 'undo', ''));
     }
 
-
+    //The main page
     return (
         <>
             <section className="python-guide mt-5">
