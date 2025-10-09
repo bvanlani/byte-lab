@@ -11,6 +11,8 @@ import { loadPyodide } from "pyodide";
   const editorContent = useRef(null);
   const pyodideRef = useRef(null);
   const [output, setOutput] = React.useState("This is where the output will show!");
+  const [showDownloadPopup, setShowDownloadPopup] = React.useState(false);
+  const [fileName, setFileName] = React.useState("");
 
   //Loading pyodide when the component is mounted
   useEffect(() => {
@@ -97,6 +99,43 @@ ${userCode}
   }
 }
 
+function saveCode(){
+      //Getting the user code from the editor
+    const userCode = editorContent.current.getValue();
+//Glourious python absolutely runing any astecic code on the website I might move it to a component jail folder.
+//But also need it here cause it loads in extensions to generate results as a string.
+const pythonCode = `
+import sys
+import io
+
+sys.stdout = io.StringIO()
+sys.stderr = io.StringIO()
+
+${userCode}
+`;
+
+  saveStringAsFile("yourProgram", pythonCode)
+}
+
+
+function saveStringAsFile(filename, content) {
+  // Create a Blob with the content
+  const blob = new Blob([content], { type: "text/plain" });
+
+  // Create a temporary link element(Basically a txt page)
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob); // Giving a random url so we can download
+  link.download = filename;              //Setting the name
+
+  //Triggering download without user input
+  document.body.appendChild(link);
+  link.click();
+
+  //Now that its downloaded cleaning everything up.
+  document.body.removeChild(link);
+  URL.revokeObjectURL(link.href);
+}
+
     return( 
     //Defing the layout of the compiler component.
     <section className ="d-flex flex-column">
@@ -129,6 +168,7 @@ ${userCode}
                         }}
                         />
                       <button className="btn btn-primary mt-3 mb-3" onClick={() => runPythonCode()}>Run Code</button>
+                      <button className="btn btn-primary m-3" onClick={saveCode}>Download</button>
                     </div>
                     <div className="text-light bg-dark" section style={{ minHeight: "30vh" }}>
                         <p>{output}</p>
