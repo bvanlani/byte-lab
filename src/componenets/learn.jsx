@@ -2,6 +2,7 @@ import Footer from "./layout/Footer.jsx";
 import Editor from "@monaco-editor/react";
 import ColorLegend from "./content/ColorLegend.jsx";
 import { Link } from "react-router-dom";
+import OutputBox from "./content/OutputBox.jsx";
 
 export default function PythonBasics() {
     // A reusable component for consistent editor styling
@@ -66,6 +67,7 @@ is_student = True
 print(name)        # Output: Alex
 print(age + 1)     # Output: 16`} />
                     <br />
+                  <OutputBox content={"Alex" + "\n" + "17"} />
                 </div>
 
                 {/* PRINT & INPUT */}
@@ -76,6 +78,7 @@ print(age + 1)     # Output: 16`} />
                     <CodeBox code={`# Example
 name = input("What is your name? ")
 print("Hello, " + name + "!")`} />
+                <OutputBox content={"What is your name: Cayden" + "\n" + "Hello, Cayden!"} />
                 </div>
 
                 {/* IF / ELIF / ELSE */}
@@ -92,6 +95,7 @@ elif score >= 80:
     print("B grade")
 else:
     print("Keep improving!")`} />
+                    <OutputBox content={"B grade"} />
                 </div>
 
                 {/* FOR LOOPS */}
@@ -104,9 +108,10 @@ for i in range(5):
     print("Loop:", i)
 
 # Example 2: Looping through a list
-fruits = ["apple", "banana", "cherry"]
+fruits = ["Apple", "Banana", "Cherry"]
 for fruit in fruits:
     print(fruit)`} />
+    <OutputBox content={"Apple" + "\n" + "Banana" + "\n" + "Cherry"} />
                 </div>
 
                 {/* WHILE LOOPS */}
@@ -117,8 +122,9 @@ for fruit in fruits:
                     <CodeBox code={`# Example
 count = 0
 while count < 3:
-    print("Count is", count)
+    print("Count is " + count)
     count += 1`} />
+             <OutputBox content={"Count is 0" + "\n" + "Count is 1" + "\n" + "Count is 2"} />
                 </div>
 
                 {/* FUNCTIONS */}
@@ -128,10 +134,11 @@ while count < 3:
                     <p>Functions let you reuse code by grouping instructions together under a name.</p>
                     <CodeBox code={`# Example
 def greet(name):
-    print("Hello,", name)
+    print("Hello, " + name)
 
 greet("Liam")
 greet("Sofia")`} />
+                <OutputBox content={"Hello, Liam" + "\n" + "Hello, Sofia"} />
                 </div>
 
                 {/* COMMENTS */}
@@ -141,6 +148,7 @@ greet("Sofia")`} />
                     <p>Comments are ignored by the computer. Use them to explain your code.</p>
                     <CodeBox code={`# This is a comment
 # Use comments to describe what your code does`} />
+                <OutputBox content={""} />
                 </div>
 
                 {/* NEXT STEPS */}
