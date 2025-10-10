@@ -23,24 +23,23 @@ import { loadPyodide } from "pyodide";
     loadPyodideInstance();
     }, []);
 
-  //Function to check if the editor is mounted and updated
+  //Runs once the editor is loaded. Prevent pasting and updates the editor
   function handleEditorDidMount(editor, monaco) {
     editorContent.current = editor;
-
+    // Prevent mouse-based pasting
+    const domNode = editor.getDomNode();
     // Prevent Ctrl+V and right-click paste
     editor.onKeyDown((e) => {
       if ((e.ctrlKey || e.metaKey) && e.keyCode === monaco.KeyCode.KeyV) {
         e.preventDefault();
-        alert("Be sure to write your own code!");
+        alert("Pasting is disabled");
       }
     });
-
-    // Prevent mouse-based pasting (e.g., right-click → paste)
-    const domNode = editor.getDomNode();
+    //Prevnting the pasting via right click.
     if (domNode) {
       domNode.addEventListener("paste", (e) => {
         e.preventDefault();
-        alert("Be sure to write your own code!");
+        alert("Pasting is disabled");
       });
     }
   }
@@ -49,9 +48,12 @@ import { loadPyodide } from "pyodide";
   async function runPythonCode() {
     //Checking for if the pyodide is loaded.
     if(!pyodideRef.current){
+      //If version mismatch fires this
       setOutput("That's awkward give me a sec and try again.");
+      console.error("Pyodide Version Mismatch. Check Import");
       return;
     }else{
+      //Setting to compiling to let user know its working. Useful for large
       setOutput("Compiling...");
     }
     //Getting the user code from the editor
@@ -74,15 +76,11 @@ ${userCode}
     const result = await pyodideRef.current.runPythonAsync(pythonCode);
     //Capturing the output and errors to show the user.
     const stdout = await pyodideRef.current.runPythonAsync("sys.stdout.getvalue()");
-    const stderr = await pyodideRef.current.runPythonAsync("sys.stderr.getvalue()");
-
     //Combinig everything and outputting it unless there is nothing then sending a blank string to keep zuc happy
-    setOutput((stdout + stderr) || "So empty here"); // update React state
+    setOutput((stdout) || "So empty here"); // update React state
   } catch(err){
     //Returning error if messed up
     try{
-        //Getting the output from the error. Formatting it to be easier for user to read.
-
         //Getting the ful error message
         const stderr = await pyodideRef.current.runPythonAsync("sys.stderr.getvalue()");
         //Finding where the last error is and slicing to get a more compact message
@@ -100,35 +98,24 @@ ${userCode}
 }
 
 function saveCode(){
-      //Getting the user code from the editor
+    //Getting the user code from the editor
     const userCode = editorContent.current.getValue();
-//Glourious python absolutely runing any astecic code on the website I might move it to a component jail folder.
-//But also need it here cause it loads in extensions to generate results as a string.
-const pythonCode = `
-import sys
-import io
-
-sys.stdout = io.StringIO()
-sys.stderr = io.StringIO()
-
-${userCode}
-`;
-
-  saveStringAsFile("yourProgram", pythonCode)
+    //Decided against special naming or saving the special functions because they are importted anyways.
+    saveStringAsFile("yourProgram", userCode)
 }
 
 
 function saveStringAsFile(filename, content) {
-  // Create a Blob with the content
+  // Create a Blob with the content(Blobs are basically wrappers to hold your data while its exported)
   const blob = new Blob([content], { type: "text/plain" });
 
   // Create a temporary link element(Basically a txt page)
-  const link = document.createElement("a");
-  link.href = URL.createObjectURL(blob); // Giving a random url so we can download
-  link.download = filename;              //Setting the name
+  const link = document.createElement("a"); //creating a reference to link our object to
+  link.href = URL.createObjectURL(blob); //Giving a location to our new blob and linking it
+  link.download = filename;              //Setting the filename
 
   //Triggering download without user input
-  document.body.appendChild(link);
+  document.body.appendChild(link); //Automatically clicking button for the user.
   link.click();
 
   //Now that its downloaded cleaning everything up.
@@ -136,36 +123,31 @@ function saveStringAsFile(filename, content) {
   URL.revokeObjectURL(link.href);
 }
 
+
     return( 
     //Defing the layout of the compiler component.
     <section className ="d-flex flex-column">
             <div className="container">
                 <div className="row">
                     <div className="rounded row-12 col-12 text-light" style={{ minHeight: 300 }}>
-                    <Editor
-                        height="400px" 
+                    {/*This is the code editor where user modifes code.*/}
+                    <Editor 
+                        height = "400px"
                         defaultLanguage="python"
-                        defaultValue="#Start coding here!"
+                        defaultValue="#This is where you make your own programs!"
                         theme="vs-dark"
                         fontFamily="'Fira Code', monospace"
                         onMount={handleEditorDidMount}
                         options={{
                                 minimap: { enabled: true},
                                 fontSize: 16,
-                                fontFamily: "Fira Code, monospace",
                                 lineNumbers: "on",
                                 scrollBeyondLastLine: false,
                                 roundedSelection: true,
-                                padding: { top: 10, bottom: 10, left: 10, right: 30 },
-                                scrollbar: {
-                                 vertical: "visible",
-                                horizontal: "auto",
-                                useShadows: false,
-                                verticalScrollbarSize: 12,
-                                horizontalScrollbarSize: 12,
-                        },
+                                useShadows: false
                         }}
                         />
+                      {/*The bottom buttons.*/}
                       <button className="btn btn-primary mt-3 mb-3" onClick={() => runPythonCode()}>Run Code</button>
                       <button className="btn btn-primary m-3" onClick={saveCode}>Download</button>
                     </div>
@@ -180,10 +162,7 @@ function saveStringAsFile(filename, content) {
     async function runPythonCode(code) {
   let pyodide = null;
   try{
-    
-
     const result = await pyodide.runPythonAsync(code);
-    console.log(result);
   } catch(err){
     console.log(err);
   }
