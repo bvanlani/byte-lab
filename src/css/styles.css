@@ -10973,13 +10973,23 @@ footer.footer {
 .headline-text {
   min-height: 15rem;
 }
-
-.author-img{
-  background-size:cover;
-  min-height:3rem;
-  aspect-ratio: 1/1;
-  border-radius:50%;
-  box-shadow: 2px 2px 5px 0px #000;
+@media (min-width: 768px) {
+  .author-img{
+    background-size:cover;
+    min-height:2rem;
+    aspect-ratio: 1/1;
+    border-radius:50%;
+    box-shadow: 2px 2px 5px 0px #000;
+  }
+}
+@media (min-width:1200px){
+  .author-img{
+    background-size:cover;
+    min-height:3rem;
+    aspect-ratio: 1/1;
+    border-radius:50%;
+    box-shadow: 2px 2px 5px 0px #000;
+  }
 }
 
 .form-content {

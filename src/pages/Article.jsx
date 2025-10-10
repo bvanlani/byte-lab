@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 
-import Nav from "../componenets/layout/Header"
+import Nav from "../componenets/layout/Nav"
 import Footer from "../componenets/layout/Footer"
 import Background from "../componenets/effects/Background"
 

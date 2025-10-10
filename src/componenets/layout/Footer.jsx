@@ -9,7 +9,7 @@ export default function Footer(){
                         <ul className="list-inline mb-2">
                             <li className="list-inline-item"><Link to="/">Home</Link></li>
                             <li className="list-inline-item text-light">⋅</li>
-                            <li className="list-inline-item"><Link to="/contact">Contact</Link></li>
+                            <li className="list-inline-item"><Link to="/contact-us">Contact</Link></li>
                             <li className="list-inline-item text-light">⋅</li>
                             <li className="list-inline-item"><Link to="/terms-of-use">Terms of Use</Link></li>
                             <li className="list-inline-item text-light">⋅</li>

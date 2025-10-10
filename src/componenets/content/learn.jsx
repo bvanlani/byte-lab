@@ -6,39 +6,26 @@ import OutputBox from "./OutputBox.jsx";
 export default function PythonBasics() {
     // A reusable component for consistent editor styling
     const CodeBox = ({ code }) => (
-        <div className="rounded bg-dark my-3">
+        <div className="rounded bg-dark my-3" style={{ height: "200px" }}>
             <Editor
-                height="200px"
                 defaultLanguage="python"
                 value={code}
                 theme="vs-dark"
-                readOnly={true}
                 options={{
-                    readOnly: true,
-                    minimap: { enabled: false },
-                    fontSize: 15,
-                    scrollBeyondLastLine: false,
-                    lineNumbers: "on",
-                    roundedSelection: true,
-                    cursorStyle: "line",
-                    contextmenu: false,
-                    domReadOnly: true,
-                    automaticLayout: true,
-                    alwaysConsumeMouseWheel: false
+                readOnly: true,
+                minimap: { enabled: false },
+                fontSize: 15,
+                scrollBeyondLastLine: false,
+                lineNumbers: "on",
+                roundedSelection: true,
+                cursorStyle: "line",
+                automaticLayout: true,
+                alwaysConsumeMouseWheel: false,
+                handleMouseWheel: false,
                 }}
             />
         </div>
     );
-
-    //Monaco editor config when it loads in
-     function handleEditorDidMount(editor, monaco) {
-        // Disable editing fully
-        editor.updateOptions({ readOnly: true });
-        // Prevent all keyboard input
-        editor.onKeyDown(e => e.preventDefault());
-        // Prevent paste or typing via commands
-        editor.onDidAttemptReadOnlyEdit(() => editor.trigger('', 'undo', ''));
-    }
 
     //The main page
     return (
@@ -147,14 +134,13 @@ greet("Sofia")`} />
                     <p>Comments are ignored by the computer. Use them to explain your code.</p>
                     <CodeBox code={`# This is a comment
 # Use comments to describe what your code does`} />
-                <OutputBox content={""} />
                 </div>
 
                 {/* NEXT STEPS */}
                 <div className="container text-center p-5 mb-5 bg-dark text-light">
                     <h1>Next Steps</h1>
                     <br />
-                    <p>Now that you know the basics, try combining these concepts! You can write a guessing game, calculator, or story generator. Visit <Link to="/the-lab">The Lab</Link> to experiment with your new skills.</p>
+                    <p>Now that you know the basics, try combining these concepts! You can write a guessing game, calculator, or story generator. Visit <Link to="/the-lab" className="fst-italic fw-bold text-light text-decoration-none">The Lab</Link> to experiment with your new skills.</p>
                 </div>
             </section>
         </>
