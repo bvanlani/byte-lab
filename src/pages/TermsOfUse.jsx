@@ -6,7 +6,6 @@ Outlnes the proper use of the Byte labs website and displays the privacy policy.
 import Nav from "../componenets/layout/Nav";
 import Footer from "../componenets/layout/Footer";
 import Background from "../componenets/effects/Background"
-import { Link } from "react-router-dom";
 import TermsOfUseBody from "../componenets/content/TermsOfUseBody";
 
 //Combing components into the webpage

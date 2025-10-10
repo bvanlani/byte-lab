@@ -2,6 +2,8 @@
 This one is the privacy policy outlining the privacy on the bytelabs website
 */
 
+import { Link } from "react-router-dom";
+
 //Returning the Privacy Policy document
 export default function PrivacyPolicyBody(){
     return(
@@ -56,7 +58,7 @@ export default function PrivacyPolicyBody(){
                         <li>Ask us to delete their child’s account or information.</li>
                         <li>Refuse any further collection or use of their child’s information.</li>
                     </ul>
-                    <p>Parents can contact us at <em>ben.vanlaningham@gmail.com</em></p>
+                    <p>Parents can contact us at <a href="mailto:bytelabscs@gmail.com" className="fst-italic fw-bold text-light text-decoration-none">bytelabscs@gmail.com</a> or fill out our<Link to="/contact-us" className="fst-italic fw-bold text-light text-decoration-none"> contact us form.</Link></p>
                 </div>
                 <div className="container text-center p-5 mb-5 bg-dark text-light">
                     <h1>Cookies & Tracking</h1>
@@ -76,7 +78,7 @@ export default function PrivacyPolicyBody(){
                 <div className="container text-center p-5 mb-5 bg-dark text-light">
                     <h1>Contact Information</h1>
                     <br />
-                    <p>For questions or concerns regarding this policy, please contact the Byte Lab team at <em>ben.vanlaningham@gmail.com</em>.</p>
+                    <p>For questions or concerns regarding this policy, please contact the Byte Lab team at <a href="mailto:bytelabscs@gmail.com" className="fst-italic fw-bold text-light text-decoration-none">bytelabscs@gmail.com</a> or fill out our<Link to="/contact-us" className="fst-italic fw-bold text-light text-decoration-none"> contact us form.</Link></p>
                 </div>
             </section>
         </>

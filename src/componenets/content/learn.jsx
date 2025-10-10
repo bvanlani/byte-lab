@@ -1,8 +1,7 @@
-import Footer from "./layout/Footer.jsx";
 import Editor from "@monaco-editor/react";
-import ColorLegend from "./content/ColorLegend.jsx";
+import ColorLegend from "./ColorLegend.jsx";
 import { Link } from "react-router-dom";
-import OutputBox from "./content/OutputBox.jsx";
+import OutputBox from "./OutputBox.jsx";
 
 export default function PythonBasics() {
     // A reusable component for consistent editor styling

@@ -2,11 +2,13 @@
 This one highlights the terms of use for the end users to follow. Essentially a EULA.
 */
 
+import { Link } from "react-router-dom";
+
 //Returning the document
 export default function TermsOfUseBody(){
     return(
         <>
-                        <section className="terms-of-use mt-5">
+            <section className="terms-of-use mt-5">
                 <div className="container text-center p-5 mb-5 bg-dark text-light">
                     <h1>Terms of use for Byte Lab</h1>
                     <p>Last updated: <em>October 3rd, 2025</em></p>
@@ -42,7 +44,7 @@ export default function TermsOfUseBody(){
                 <div className="container text-center p-5 mb-5 bg-dark text-light">
                     <h1>Privacy Policy</h1>
                     <br />
-                    <p>Byte Lab does not collect personal information beyond what is necessary to support educational activities. Data may be monitored by mentors and teachers to ensure appropriate use and to support learning. For more information, please refer to our <Link to="/privacy-policy">Privacy Policy.</Link></p>
+                    <p>Byte Lab does not collect personal information beyond what is necessary to support educational activities. Data may be monitored by mentors and teachers to ensure appropriate use and to support learning. For more information, please refer to our <Link to="/privacy-policy" className="fst-italic fw-bold text-light text-decoration-none">Privacy Policy.</Link></p>
                 </div>
                 <div className="container text-center p-5 mb-5 bg-dark text-light">
                     <h1>Intellectual Property</h1>
@@ -67,7 +69,7 @@ export default function TermsOfUseBody(){
                 <div className="container text-center p-5 mb-5 bg-dark text-light">
                     <h1>Contact Information</h1>
                     <br />
-                    <p>For questions or concerns regarding these Terms, please contact the Byte Lab team at <em>ben.vanlaningham@gmail.com</em>.</p>
+                    <p>For questions or concerns regarding these Terms, please contact the Byte Lab team at <a href="mailto:bytelabscs@gmail.com" className="fst-italic fw-bold text-light text-decoration-none">bytelabscs@gmail.com</a> or fill out our<Link to="/contact-us" className="fst-italic fw-bold text-light text-decoration-none"> contact us form.</Link></p>
                 </div>
             </section>
         </>
