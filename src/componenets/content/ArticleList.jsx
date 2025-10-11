@@ -17,9 +17,9 @@ export default function ArticleList(){
                                 <div className="col-lg-2 thumbnail d-flex align-items-center p-3">
                                     <img src={article.thumbnail} alt="Article Thumbnail" className="rounded"></img>
                                 </div>
-                                <div className="col-lg-10 d-flex align-items-center justify-content-between ps-5 row text-start">
-                                    <h2 className="m-0 col-lg-9">{article.title}</h2>
-                                    <div className="d-flex align-items-center col-lg-3 justify-content-end text-center">
+                                <div className="col-lg-10 d-flex align-items-center justify-content-between ps-5 py-2 row text-start">
+                                    <h2 className="m-0 col-lg-9 fw-bold text-primary">{article.title}</h2>
+                                    <div className="d-flex align-items-center col-lg-3 article-meta-data text-center">
                                         <div className="author-img me-2" style={{backgroundImage: `url(${article.authorImg})`}}></div>
                                         <p className="m-0">{article.author}<br /><span className="text-muted"> {article.date}</span></p>
                                     </div>

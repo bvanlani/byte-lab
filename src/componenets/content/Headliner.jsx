@@ -13,11 +13,11 @@ export default function Headliner(){
             <div className="container text-light text-start rounded">
                 <Link to={`/news/${article.id}`} className="text-light text-decoration-none article">
                     <div className="row p-5 bg-dark-secondary rounded">
-                        <div className="col-4 headline-img d-flex align-items-center justify-content-center">
+                        <div className="col-lg-4 headline-img d-flex align-items-center justify-content-center">
                             <img src={article.thumbnail} alt="Headline Image" className="rounded"/>
                         </div>
-                        <div className="col-8 headline-text ps-5 d-flex flex-column justify-content-between"> 
-                            <h1>{article.title}</h1>
+                        <div className="col-lg-8 headline-text ps-5 py-2 d-flex flex-column justify-content-between"> 
+                            <h1 className="text-primary fw-bold">{article.title}</h1>
                             <p className="fs-5">{article.summary}</p>
                             <div className="d-flex align-items-center">
                                 <div className="author-img me-2" style={{backgroundImage: `url(${article.authorImg})`}}></div>
