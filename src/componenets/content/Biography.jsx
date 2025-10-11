@@ -5,10 +5,8 @@ This one is the biography with the portraits of everyone who is running byte Lab
 
 //Grabbing the pictures
 import BethanPortrait from '../../assets/BethanPortrait.png';
-import candid2 from '../../assets/testimonials-2.jpg';
+import BenPortrait from '../../assets/BenPotrait.jpg';
 import candid3 from '../../assets/testimonials-3.jpg';
-//import candid4 from '../assets/testimonials-4.jpg';
-//import candid5 from '../assets/testimonials-5.jpg';
 
 
 //Returning the biography website.
@@ -27,7 +25,7 @@ export default function Biography(){
                 </div>
                 <div className="col-lg-2">
                     <div className="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img className="img-fluid rounded-circle mb-3" src={candid3} alt="..." />
+                        <img className="img-fluid rounded-circle mb-3" src={BenPortrait} alt="..." />
                         <h5 className="text-light">Ben V.</h5>
                         <p className="text-light"><em>Eight years of computer science, from building scratch games to learning multiple languages.</em></p>
                     </div>
