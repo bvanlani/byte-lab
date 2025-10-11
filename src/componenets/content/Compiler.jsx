@@ -98,7 +98,10 @@ function saveStringAsFile(filename, content) {
                                 lineNumbers: "on",
                                 scrollBeyondLastLine: false,
                                 roundedSelection: true,
-                                useShadows: false
+                                useShadows: false,
+                                scrollbar:{
+                                    alwaysConsumeMouseWheel: false
+                                }
                         }}
                         />
                       {/*The bottom buttons.*/}

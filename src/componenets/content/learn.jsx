@@ -20,8 +20,9 @@ export default function PythonBasics() {
                 roundedSelection: true,
                 cursorStyle: "line",
                 automaticLayout: true,
-                alwaysConsumeMouseWheel: false,
-                handleMouseWheel: false,
+                scrollbar:{
+                    alwaysConsumeMouseWheel: false
+                }
                 }}
             />
         </div>
