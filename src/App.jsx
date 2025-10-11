@@ -13,7 +13,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
 import LearnPage from './pages/LearnPage.jsx';
 import News from './pages/news.jsx';
 import ContactUs from './pages/ContactUs.jsx';
-import Article from './pages/Article.jsx';
+import ArticlePage from './pages/ArticlePage.jsx';
 
 export default function App() {  
   return (
@@ -26,7 +26,7 @@ export default function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/learn-page" element={<LearnPage/>}/>
         <Route path="/news" element={<News />} />
-        <Route path="/news/:id" element={<Article />} />
+        <Route path="/news/:id" element={<ArticlePage />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
