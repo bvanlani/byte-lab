@@ -10986,6 +10986,14 @@ footer.footer {
   justify-content: space-between;
 }
 
+.article-summary{
+  display:none;
+}
+
+.meta-data-container{
+  padding: 1rem;
+}
+
 @media (min-width:992px){
   .author-img{
     background-size:cover;
@@ -10997,6 +11005,14 @@ footer.footer {
 
   .article-meta-data{
     justify-content: end;
+  }
+
+  .article-summary{
+    display:default;
+  }
+
+  .meta-data-container{
+    padding-left: 1rem;
   }
 }
 
