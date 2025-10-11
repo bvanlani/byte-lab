@@ -12,11 +12,11 @@ export default function Headliner(){
         <section className="headliner">
             <div className="container text-light text-start rounded">
                 <Link to={`/news/${article.id}`} className="text-light text-decoration-none article">
-                    <div className="row bg-dark-secondary rounded">
+                    <div className="row bg-dark-secondary rounded py-4">
                         <div className="col-lg-4 headline-img d-flex align-items-center justify-content-center">
                             <img src={article.thumbnail} alt="Headline Image" className="rounded"/>
                         </div>
-                        <div className="col-lg-8 headline-text meta-data-container py-2 d-flex flex-column justify-content-between"> 
+                        <div className="col-lg-8 headline-text meta-data-container d-flex flex-column justify-content-between"> 
                             <h1 className="text-primary fw-bold">{article.title}</h1>
                             <p className="fs-5 article-summary">{article.summary}</p>
                             <div className="d-flex align-items-center">

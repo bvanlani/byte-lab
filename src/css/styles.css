@@ -10990,9 +10990,9 @@ footer.footer {
   display:none;
 }
 
-.meta-data-container{
-  padding: 1rem;
-}
+ .meta-data-container{
+    padding: 1rem;
+  }
 
 @media (min-width:992px){
   .author-img{
@@ -11012,7 +11012,7 @@ footer.footer {
   }
 
   .meta-data-container{
-    padding-left: 1rem;
+    padding: 0 1rem;
   }
 }
 
