@@ -11008,7 +11008,7 @@ footer.footer {
   }
 
   .article-summary{
-    display:default;
+    display:block;
   }
 
   .meta-data-container{
