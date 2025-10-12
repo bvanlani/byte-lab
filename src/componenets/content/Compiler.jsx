@@ -79,40 +79,38 @@ function saveStringAsFile(filename, content) {
 
 //Returning the compiler component
     return( 
-    //Defing the layout of the compiler component.
-    <section className ="d-flex flex-column">
-            <div className="container">
-                <div className="row">
-                    <div className="rounded row-12 col-12 text-light" style={{ minHeight: 300 }}>
-                    {/*This is the code editor where user modifes code.*/}
-                    <Editor 
-                        height = "400px"
-                        defaultLanguage="python"
-                        defaultValue="#This is where you make your own programs!"
-                        theme="vs-dark"
-                        fontFamily="'Fira Code', monospace"
-                        onMount={handleEditorDidMount}
-                        options={{
-                                minimap: { enabled: true},
-                                fontSize: 16,
-                                lineNumbers: "on",
-                                scrollBeyondLastLine: false,
-                                roundedSelection: true,
-                                useShadows: false,
-                                scrollbar:{
-                                    alwaysConsumeMouseWheel: false
-                                }
-                        }}
-                        />
-                      {/*The bottom buttons.*/}
-                      <button className="btn btn-primary mt-3 mb-3" disabled = {!isReady} onClick={handleRun}>Run Code</button>
-                      <button className="btn btn-primary m-3" onClick={saveCode}>Download</button>
-                    </div>
-                    <div className="text-light bg-dark" style={{ minHeight: "30vh" }}>
-                        <pre>{output}</pre>
-                    </div>
-                </div>
-            </div>
-        </section>
+      //Defing the layout of the compiler component.
+      <section className ="d-flex flex-column">
+        <div className="container bg-dark p-0 rounded">
+          <div className="rounded text-light m-3" style={{ minHeight: 300 }}>
+          {/*This is the code editor where user modifes code.*/}
+          <Editor 
+              height = "400px"
+              defaultLanguage="python"
+              defaultValue="#This is where you make your own programs!"
+              theme="vs-dark"
+              fontFamily="'Fira Code', monospace"
+              onMount={handleEditorDidMount}
+              options={{
+                      minimap: { enabled: true},
+                      fontSize: 16,
+                      lineNumbers: "on",
+                      scrollBeyondLastLine: false,
+                      roundedSelection: true,
+                      useShadows: false,
+                      scrollbar:{
+                          alwaysConsumeMouseWheel: false
+                      }
+              }}
+              />
+            {/*The bottom buttons.*/}
+            <button className="btn btn-primary mt-3 mb-3" disabled = {!isReady} onClick={handleRun}>Run Code</button>
+            <button className="btn btn-primary m-3" onClick={saveCode}>Download</button>
+          </div>
+          <div className="text-light bg-dark-secondary m-3 p-3 console rounded" style={{ minHeight: "30vh" }}>
+              <pre>{output}</pre>
+          </div>
+        </div>
+      </section>
     )
  }
