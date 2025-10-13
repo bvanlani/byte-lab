@@ -2,7 +2,7 @@
 //locally in a web browser. Built on the pyodide project and the monaco editor.
 
 //Importing the needing extensions. Need react the monaco editor and the pyodide
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState} from "react";
 import { Editor } from "@monaco-editor/react";
 import { loadPyodide } from "pyodide";
 import CompilerHook from "../effects/CompilerHook";
@@ -12,6 +12,8 @@ import CompilerHook from "../effects/CompilerHook";
   const editorContent = useRef(null);
   const [fileName, setFileName] = React.useState("");
   const{runPython, output, isReady} = CompilerHook();
+  const[showPopup, setShowPopup] = useState(false);
+
 
   //When the worker is needed handling the code running
   const handleRun = () => {
@@ -58,6 +60,10 @@ function saveCode(){
     saveStringAsFile("yourProgram", userCode)
 }
 
+//Showing popup
+function toggleSaveCodePopup(){
+  setShowPopup(!showPopup);
+}
 //Comuting the operation to actually save the file as a txt file.
 function saveStringAsFile(filename, content) {
   // Create a Blob with the content(Blobs are basically wrappers to hold your data while its exported)
@@ -106,7 +112,41 @@ function saveStringAsFile(filename, content) {
                         />
                       {/*The bottom buttons.*/}
                       <button className="btn btn-primary mt-3 mb-3" disabled = {!isReady} onClick={handleRun}>Run Code</button>
-                      <button className="btn btn-primary m-3" onClick={saveCode}>Download</button>
+                      <button className="btn btn-primary m-3" onClick={toggleSaveCodePopup}>Download</button>
+                      {showPopup && (
+                      <div className="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center" style={{ backgroundColor: "rgba(0,0,0,0.6)", zIndex: 1050 }}>
+                        <div className="bg-dark text-light rounded p-4 shadow" style={{ width: "400px" }}>
+                          <div className="d-flex justify-content-between align-items-center mb-3">
+                            <h5 className="mb-0">Save File</h5>
+                          </div>
+                          <input
+                            type="text"
+                            className="form-control mb-3 bg-secondary text-light border-0"
+                            placeholder="Enter file name"
+                            value={fileName}
+                            onChange={(e) => setFileName(e.target.value)}
+                          />
+                          <div className="d-flex justify-content-end gap-2">
+                            <button className="btn btn-secondary" onClick={toggleSaveCodePopup}>
+                              Cancel
+                          </button>
+                          <button
+                            className="btn btn-success"
+                              onClick={() => {
+                                if (!fileName.trim()) {
+                                  saveCode("myProgram");
+                                } else {
+                                  saveCode(fileName);
+                                }
+                                toggleSaveCodePopup();
+                              }}
+                          >
+                            Save
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                     </div>
                     <div className="text-light bg-dark" style={{ minHeight: "30vh" }}>
                         <pre>{output}</pre>
