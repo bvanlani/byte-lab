@@ -106,7 +106,7 @@ function saveStringAsFile(filename, content) {
                       <button className="btn btn-primary m-3" onClick={saveCode}>Download</button>
                     </div>
                     <div className="text-light bg-dark" style={{ minHeight: "30vh" }}>
-                        <p>{output}</p>
+                        <pre>{output}</pre>
                     </div>
                 </div>
             </div>
