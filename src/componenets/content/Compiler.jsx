@@ -12,7 +12,9 @@ import CompilerHook from "../effects/CompilerHook";
   const editorContent = useRef(null);
   const [fileName, setFileName] = React.useState("");
   const{runPython, output, isReady} = CompilerHook();
-  const[showPopup, setShowPopup] = useState(false);
+  const[savePopup, setSavePopup] = useState(false);
+  const[uploadPopup, setUploadPopup] = useState(false);
+  const fileInputRef = useRef(null);
 
 
   //When the worker is needed handling the code running
@@ -53,26 +55,35 @@ ${userCode}
   }
 
 //Saving the users code
-function saveCode(){
+function saveCode(filename){
     //Getting the user code from the editor
     const userCode = editorContent.current.getValue();
+    const KEY = "===вYTE_LAвS_KEY===";
+    const savedCode = KEY + '\n' + userCode;
     //Decided against special naming or saving the special functions because they are importted anyways.
-    saveStringAsFile("yourProgram", userCode)
+    saveStringAsFile(filename,savedCode)
 }
 
-//Showing popup
+//Showing save popup
 function toggleSaveCodePopup(){
-  setShowPopup(!showPopup);
+  setSavePopup(!savePopup);
 }
+
+//Showing the upload popup
+function toggleUploadCodePopup(){
+  setUploadPopup(!uploadPopup);
+}
+
 //Comuting the operation to actually save the file as a txt file.
 function saveStringAsFile(filename, content) {
   // Create a Blob with the content(Blobs are basically wrappers to hold your data while its exported)
+  const fullFileName = filename + ".txt";
   const blob = new Blob([content], { type: "text/plain" });
 
   // Create a temporary link element(Basically a txt page)
   const link = document.createElement("a"); //creating a reference to link our object to
   link.href = URL.createObjectURL(blob); //Giving a location to our new blob and linking it
-  link.download = filename;              //Setting the filename
+  link.download = fullFileName;              //Setting the filename
 
   //Triggering download without user input
   document.body.appendChild(link); //Automatically clicking button for the user.
@@ -82,6 +93,47 @@ function saveStringAsFile(filename, content) {
   document.body.removeChild(link);
   URL.revokeObjectURL(link.href);
 }
+
+
+  //Uploading the data
+  function handleFileUpload(e) {
+    //Getting target file
+    const KEY = "===вYTE_LAвS_KEY===";
+    const file = e.target.files[0];
+    //Error checking
+    if (!file){
+      console.log("The file is not pushing here correctly")
+       return;
+    }
+    //Creating file reader to read through the text
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const text = event.target.result;
+
+      // Check if it starts with the secret signature
+      if (!text.startsWith(KEY)) {
+        console.log("InaccurateKey")
+        return;
+      }
+      
+      // Strip secret line and send the code back to your editor or Pyodide
+      const code = text.replace(KEY + "\n", "");
+      editorContent.current.setValue(code); // You can use setEditorContent(code)
+    };
+    reader.readAsText(file);
+    toggleUploadCodePopup();
+
+    
+  return (
+    <input
+      type="file"
+      accept=".txt"
+      onChange={handleFileUpload}
+      className="form-control text-light bg-dark"
+    />
+  );
+  }
+
 
 //Returning the compiler component
     return( 
@@ -111,9 +163,11 @@ function saveStringAsFile(filename, content) {
                         }}
                         />
                       {/*The bottom buttons.*/}
-                      <button className="btn btn-primary mt-3 mb-3" disabled = {!isReady} onClick={handleRun}>Run Code</button>
+                      <button className="btn btn-primary m-3" disabled = {!isReady} onClick={handleRun}>Run Code</button>
                       <button className="btn btn-primary m-3" onClick={toggleSaveCodePopup}>Download</button>
-                      {showPopup && (
+                      <button className="btn btn-primary m-3" onClick={toggleUploadCodePopup}>Upload</button>
+                      
+                      {savePopup && (
                       <div className="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center" style={{ backgroundColor: "rgba(0,0,0,0.6)", zIndex: 1050 }}>
                         <div className="bg-dark text-light rounded p-4 shadow" style={{ width: "400px" }}>
                           <div className="d-flex justify-content-between align-items-center mb-3">
@@ -147,6 +201,35 @@ function saveStringAsFile(filename, content) {
                       </div>
                     </div>
                   )}
+                  {uploadPopup && (
+        <div
+          className="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center"
+          style={{ backgroundColor: "rgba(0,0,0,0.6)", zIndex: 1050 }}
+        >
+          <div
+            className="bg-dark text-light rounded p-4 shadow"
+            style={{ width: "400px" }}
+          >
+            <div className="d-flex justify-content-between align-items-center mb-3">
+              <h5 className="mb-0">Upload File</h5>
+            </div>
+
+            <input
+              type="file"
+              accept=".txt"
+              ref={fileInputRef}
+              onChange={handleFileUpload}
+              className="form-control mb-3 bg-secondary text-light border-0"
+            />
+
+            <div className="d-flex justify-content-end gap-2">
+              <button className="btn btn-secondary" onClick={toggleUploadCodePopup}>
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
                     </div>
                     <div className="text-light bg-dark" style={{ minHeight: "30vh" }}>
                         <pre>{output}</pre>
