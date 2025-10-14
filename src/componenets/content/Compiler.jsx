@@ -6,16 +6,24 @@ import React, { useEffect, useRef, useState} from "react";
 import { Editor } from "@monaco-editor/react";
 import { loadPyodide } from "pyodide";
 import CompilerHook from "../effects/CompilerHook";
+import SavePopup  from "../popups/SavePopup.jsx";
+import UploadPopup from "../popups/UploadPopup.jsx";
 
  export default function Compiler(){
   //Getting some constants to update it. Getting the editor and the pyodide to run code
-  const editorContent = useRef(null);
-  const [fileName, setFileName] = React.useState("");
-  const{runPython, output, isReady} = CompilerHook();
-  const[savePopup, setSavePopup] = useState(false);
-  const[uploadPopup, setUploadPopup] = useState(false);
-  const fileInputRef = useRef(null);
+    const editorContent = useRef(null);
+    const{runPython, output, isReady} = CompilerHook();
+    const[savePopup, setSavePopup] = useState(false);
+    const[uploadPopup, setUploadPopup] = useState(false);
 
+    //Toggles Save popup
+  function toggleSaveCodePopup(){
+    setSavePopup(!savePopup);
+  }
+  //Toggles the upload popup
+  function toggleUploadCodePopup(){
+    setUploadPopup(!uploadPopup);
+  }
 
   //When the worker is needed handling the code running
   const handleRun = () => {
@@ -64,15 +72,6 @@ function saveCode(filename){
     saveStringAsFile(filename,savedCode)
 }
 
-//Showing save popup
-function toggleSaveCodePopup(){
-  setSavePopup(!savePopup);
-}
-
-//Showing the upload popup
-function toggleUploadCodePopup(){
-  setUploadPopup(!uploadPopup);
-}
 
 //Comuting the operation to actually save the file as a txt file.
 function saveStringAsFile(filename, content) {
@@ -94,22 +93,10 @@ function saveStringAsFile(filename, content) {
   URL.revokeObjectURL(link.href);
 }
 
-
   //Uploading the data
-  function handleFileUpload(e) {
+  function handleFileUpload(text) {
     //Getting target file
     const KEY = "===вYTE_LAвS_KEY===";
-    const file = e.target.files[0];
-    //Error checking
-    if (!file){
-      console.log("The file is not pushing here correctly")
-       return;
-    }
-    //Creating file reader to read through the text
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      const text = event.target.result;
-
       // Check if it starts with the secret signature
       if (!text.startsWith(KEY)) {
         console.log("InaccurateKey")
@@ -119,21 +106,8 @@ function saveStringAsFile(filename, content) {
       // Strip secret line and send the code back to your editor or Pyodide
       const code = text.replace(KEY + "\n", "");
       editorContent.current.setValue(code); // You can use setEditorContent(code)
-    };
-    reader.readAsText(file);
     toggleUploadCodePopup();
-
-    
-  return (
-    <input
-      type="file"
-      accept=".txt"
-      onChange={handleFileUpload}
-      className="form-control text-light bg-dark"
-    />
-  );
   }
-
 
 //Returning the compiler component
     return( 
@@ -150,86 +124,18 @@ function saveStringAsFile(filename, content) {
                         theme="vs-dark"
                         fontFamily="'Fira Code', monospace"
                         onMount={handleEditorDidMount}
-                        options={{
-                                minimap: { enabled: true},
-                                fontSize: 16,
-                                lineNumbers: "on",
-                                scrollBeyondLastLine: false,
+                        options={{fontSize: 16,lineNumbers: "on",
                                 roundedSelection: true,
                                 useShadows: false,
-                                scrollbar:{
-                                    alwaysConsumeMouseWheel: false
-                                }
                         }}
                         />
                       {/*The bottom buttons.*/}
                       <button className="btn btn-primary m-3" disabled = {!isReady} onClick={handleRun}>Run Code</button>
-                      <button className="btn btn-primary m-3" onClick={toggleSaveCodePopup}>Download</button>
-                      <button className="btn btn-primary m-3" onClick={toggleUploadCodePopup}>Upload</button>
-                      
-                      {savePopup && (
-                      <div className="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center" style={{ backgroundColor: "rgba(0,0,0,0.6)", zIndex: 1050 }}>
-                        <div className="bg-dark text-light rounded p-4 shadow" style={{ width: "400px" }}>
-                          <div className="d-flex justify-content-between align-items-center mb-3">
-                            <h5 className="mb-0">Save File</h5>
-                          </div>
-                          <input
-                            type="text"
-                            className="form-control mb-3 bg-secondary text-light border-0"
-                            placeholder="Enter file name"
-                            value={fileName}
-                            onChange={(e) => setFileName(e.target.value)}
-                          />
-                          <div className="d-flex justify-content-end gap-2">
-                            <button className="btn btn-secondary" onClick={toggleSaveCodePopup}>
-                              Cancel
-                          </button>
-                          <button
-                            className="btn btn-success"
-                              onClick={() => {
-                                if (!fileName.trim()) {
-                                  saveCode("myProgram");
-                                } else {
-                                  saveCode(fileName);
-                                }
-                                toggleSaveCodePopup();
-                              }}
-                          >
-                            Save
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                  {uploadPopup && (
-        <div
-          className="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center"
-          style={{ backgroundColor: "rgba(0,0,0,0.6)", zIndex: 1050 }}
-        >
-          <div
-            className="bg-dark text-light rounded p-4 shadow"
-            style={{ width: "400px" }}
-          >
-            <div className="d-flex justify-content-between align-items-center mb-3">
-              <h5 className="mb-0">Upload File</h5>
-            </div>
-
-            <input
-              type="file"
-              accept=".txt"
-              ref={fileInputRef}
-              onChange={handleFileUpload}
-              className="form-control mb-3 bg-secondary text-light border-0"
-            />
-
-            <div className="d-flex justify-content-end gap-2">
-              <button className="btn btn-secondary" onClick={toggleUploadCodePopup}>
-                Cancel
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+                      <button className="btn btn-primary m-3" onClick={() => {toggleSaveCodePopup()}}>Save Code</button>
+                      <button className="btn btn-primary m-3" onClick={() => {toggleUploadCodePopup()}}>Upload Code</button>
+                      {/*Getting both of the popups to confirm what the user is trying to do*/}
+                      <SavePopup show ={savePopup} onClose ={() => setSavePopup(false)} onSave = {(filename) => saveCode(filename)}></SavePopup>
+                      <UploadPopup show ={uploadPopup} onClose ={() => setUploadPopup(false)} onUpload={(file) => handleFileUpload(file)}></UploadPopup>
                     </div>
                     <div className="text-light bg-dark" style={{ minHeight: "30vh" }}>
                         <pre>{output}</pre>
