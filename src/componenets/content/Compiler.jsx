@@ -7,6 +7,7 @@ import { Editor } from "@monaco-editor/react";
 import { loadPyodide } from "pyodide";
 import CompilerHook from "../effects/CompilerHook";
 import SavePopup  from "../popups/SavePopup.jsx";
+import OutputBox from "../content/OutputBox.jsx";
 import UploadPopup from "../popups/UploadPopup.jsx";
 
  export default function Compiler(){
@@ -137,9 +138,7 @@ function saveStringAsFile(filename, content) {
                       <SavePopup show ={savePopup} onClose ={() => setSavePopup(false)} onSave = {(filename) => saveCode(filename)}></SavePopup>
                       <UploadPopup show ={uploadPopup} onClose ={() => setUploadPopup(false)} onUpload={(file) => handleFileUpload(file)}></UploadPopup>
                     </div>
-                    <div className="text-light bg-dark" style={{ minHeight: "30vh" }}>
-                        <pre>{output}</pre>
-                    </div>
+                    <OutputBox content = {output}></OutputBox>
                 </div>
             </div>
         </section>
