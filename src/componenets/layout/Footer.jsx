@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import ScrollToTop from '../effects/ScrollToTop.jsx';
 
 export default function Footer(){
     return(

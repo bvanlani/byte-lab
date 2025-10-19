@@ -27,6 +27,9 @@ export default function CompilerHook(){
           setIsReady(true);
       } else if(type === "result"){ //Otherwise returning the result from the program.
         setOutput(result);
+      } if (type === "prompt"){
+        const userInput = prompt(msg.data.prompt);
+        worker.postMessage({type: "prompt", input: userInput});
       }
     };
     worker.postMessage({type: "load"}); //Once the worker is made posting the message to make it load.
@@ -40,9 +43,9 @@ export default function CompilerHook(){
             workerRef.current.postMessage({type: "run", code});
         } else{
             //If not ready updating output to let the user know(Should never run. Locked on button in compiler)
-            setOutput("Hold up! were not quite ready for you to run your program yet.")
+            workerRef.current.postMessage("Hold up! were not quite ready for you to run your program yet.")
         }
     }
     //Updating the results from the hook running.
-    return{runPython, output, isReady}
+    return{runPython, output, isReady, prompt}
 }

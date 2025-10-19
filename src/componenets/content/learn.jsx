@@ -33,16 +33,15 @@ export default function PythonBasics() {
         <>
             <section className="python-guide mt-5">
                 {/* Intro Section */}
-                <div className="container text-center p-5 mb-5 bg-dark text-light">
+                <div className="container text-center p-5 mb-5 bg-dark text-light rounded p-6">
                     <h1>Python Basics Guide</h1>
-                    <p>Last updated: <em>October 7th, 2025</em></p>
                     <br />
                     <p>Welcome to the Byte Lab Python Basics Guide! This page introduces the fundamental concepts of Python — including variables, conditionals, loops, and functions. Perfect for beginners learning to code for the first time.</p>
                 </div>
                 
                 <ColorLegend></ColorLegend>
                 {/* VARIABLES */}
-                <div className="container text-start p-5 mb-5 bg-dark text-light">
+                <div className="container text-start p-5 mb-5 bg-dark text-light rounded p-6">
                     <h1>1. Variables</h1>
                     <br />
                     <p>Variables store data values. You can think of them like labeled boxes that hold information.</p>
@@ -58,7 +57,7 @@ print(age + 1)     # Output: 16`} />
                 </div>
 
                 {/* PRINT & INPUT */}
-                <div className="container text-start p-5 mb-5 bg-dark text-light">
+                <div className="container text-start p-5 mb-5 bg-dark text-light rounded p-6">
                     <h1>2. Print & Input</h1>
                     <br />
                     <p><code>print()</code> displays text or data. <code>input()</code> asks the user to type something in.</p>
@@ -69,7 +68,7 @@ print("Hello, " + name + "!")`} />
                 </div>
 
                 {/* IF / ELIF / ELSE */}
-                <div className="container text-start p-5 mb-5 bg-dark text-light">
+                <div className="container text-start p-5 mb-5 bg-dark text-light rounded p-6">
                     <h1>3. If, Elif, and Else</h1>
                     <br />
                     <p>Conditional statements let your code make decisions.</p>
@@ -86,7 +85,7 @@ else:
                 </div>
 
                 {/* FOR LOOPS */}
-                <div className="container text-start p-5 mb-5 bg-dark text-light">
+                <div className="container text-start p-5 mb-5 bg-dark text-light rounded p-6">
                     <h1>4. For Loops</h1>
                     <br />
                     <p><code>for</code> loops repeat code a fixed number of times or go through a list of items.</p>
@@ -102,7 +101,7 @@ for fruit in fruits:
                 </div>
 
                 {/* WHILE LOOPS */}
-                <div className="container text-start p-5 mb-5 bg-dark text-light">
+                <div className="container text-start p-5 mb-5 bg-dark text-light rounded p-6">
                     <h1>5. While Loops</h1>
                     <br />
                     <p><code>while</code> loops run as long as a condition is true.</p>
@@ -115,7 +114,7 @@ while count < 3:
                 </div>
 
                 {/* FUNCTIONS */}
-                <div className="container text-start p-5 mb-5 bg-dark text-light">
+                <div className="container text-start p-5 mb-5 bg-dark text-light rounded p-6">
                     <h1>6. Functions</h1>
                     <br />
                     <p>Functions let you reuse code by grouping instructions together under a name.</p>
@@ -129,7 +128,7 @@ greet("Sofia")`} />
                 </div>
 
                 {/* COMMENTS */}
-                <div className="container text-start p-5 mb-5 bg-dark text-light">
+                <div className="container text-start p-5 mb-5 bg-dark text-light rounded p-6">
                     <h1>7. Comments</h1>
                     <br />
                     <p>Comments are ignored by the computer. Use them to explain your code.</p>
@@ -138,7 +137,7 @@ greet("Sofia")`} />
                 </div>
 
                 {/* NEXT STEPS */}
-                <div className="container text-center p-5 mb-5 bg-dark text-light">
+                <div className="container text-center p-5 mb-5 bg-dark text-light rounded p-6">
                     <h1>Next Steps</h1>
                     <br />
                     <p>Now that you know the basics, try combining these concepts! You can write a guessing game, calculator, or story generator. Visit <Link to="/the-lab" className="fst-italic fw-bold text-light text-decoration-none">The Lab</Link> to experiment with your new skills.</p>

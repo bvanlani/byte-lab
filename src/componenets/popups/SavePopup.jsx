@@ -24,6 +24,9 @@
         <div className="d-flex justify-content-between align-items-center mb-3">
           <h5 className="mb-0">Save Code</h5>
         </div>
+        <div className="d-flex justify-content-between align-items-center mb-3">
+          <h5 className="mb-0">Enter the file name for your code: </h5>
+        </div>
         <input type="text" className="form-control mb-3 bg-secondary text-light border-0 rounded p-3" placeholder="Enter file name" value={fileName} onChange={(e) => setFileName(e.target.value)}/>
         <div className="d-flex justify-content-end gap-2">
           <button className="btn btn-secondary" onClick={onClose}>Cancel</button>
