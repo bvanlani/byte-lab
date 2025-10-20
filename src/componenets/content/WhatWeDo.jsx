@@ -1,5 +1,5 @@
 //These are the images in the landing page
-import showcase1 from '../../assets/bg-showcase-1.jpg'
+import vexSchool from '../../assets/vexSchool.webp'
 import showcase2 from '../../assets/bg-showcase-2.jpg'
 import showcase3 from '../../assets/bg-showcase-3.jpg' 
 
@@ -9,7 +9,7 @@ export default function WhatWeDo(){
         <section className="showcase">
             <div className="container-fluid p-0">
                 <div className="row g-0 bg-dark-secondary">
-                    <div className="col-lg-6 order-lg-2 text-white showcase-img" style={{ backgroundImage: `url(${showcase1})` }}></div>
+                    <div className="col-lg-6 order-lg-2 text-white showcase-img" style={{ backgroundImage: `url(${vexSchool})` }}></div>
                     <div className="col-lg-6 order-lg-1 my-auto showcase-text">
                         <h2 className="text-light">What We Do</h2>
                         <p className="lead mb-0 text-light">

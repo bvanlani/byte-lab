@@ -5,7 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 export default function Nav(){
     return(
         <nav className="navbar bg-dark nav-expand-lg">
-            <div className="container">
+            <div className="container-fluid">
                 <Link className="navbar-brand text-light" to="/">Byte Lab</Link>
                 <button
                     className="navbar-toggler"
@@ -19,7 +19,7 @@ export default function Nav(){
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav ms-auto">
+                    <ul className="navbar-nav ms-auto"  >
                         <li className="nav-item">
                         <Link className="nav-link text-light" to="/the-lab">The Lab</Link>
                         </li>
@@ -33,8 +33,8 @@ export default function Nav(){
                         <Link className="nav-link text-light" to="/contact-us">Contact</Link>
                         </li>
                     </ul>
-                </div>                
-            </div>
+                </div>    
+                </div>            
         </nav>
     )
 }
