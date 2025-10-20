@@ -134,28 +134,65 @@ async def input(prompt=''):
 
   //Returning the compiler component
   return (
-    //Defing the layout of the compiler component.
-    <section className="d-flex flex-column">
-      <div className="container">
-        <div className="row">
-          <div className="rounded row-12 col-12 text-light" style={{ minHeight: 300 }}>
-            {/*This is the code editor where user modifes code.*/}
-            <Editor height="400px" defaultLanguage="python" defaultValue="#This is where you make your own programs!"
-              theme="vs-dark" fontFamily="'Fira Code', monospace" onMount={handleEditorDidMount}
-              options={{fontSize: 16, lineNumbers: "on", roundedSelection: true, useShadows: false,}}
-            />
-            {/*The bottom buttons.*/}
-            <button className="btn btn-primary m-3" disabled={!isReady} onClick={handleRun}>Run Code</button>
-            <button className="btn btn-primary m-3" onClick={() => {toggleSaveCodePopup();}}>Save Code</button>
-            <button className="btn btn-primary m-3" onClick={() => {toggleUploadCodePopup();}}>Upload Code</button>
-            
-            {/*Getting both of the popups to confirm what the user is trying to do*/}
-            <SavePopup show={savePopup} onClose={() => setSavePopup(false)} onSave={(filename) => saveCode(filename)}></SavePopup>
-            <UploadPopup show={uploadPopup} onClose={() => setUploadPopup(false)} onUpload={(file) => handleFileUpload(file)}></UploadPopup>
-          </div>
-          <OutputBox content={output} ></OutputBox>
+ <section className="py-4">
+  <div className="container">
+    <div className="row">
+      <div className="col-12 text-light">
+      <div className="row">
+        <div className="rounded overflow-hidden shadow-sm col-8" style={{ minHeight: 300}}>
+          <Editor
+            height="400px"
+            defaultLanguage="python"
+            defaultValue="# This is where you make your own programs!"
+            theme="vs-dark"
+            fontFamily="'Fira Code', monospace"
+            onMount={handleEditorDidMount}
+            options={{
+              fontSize: 16,
+              lineNumbers: "on",
+              scrollbar: {
+                vertical: 'auto',
+                horizontal: 'auto',
+                scrollbarWidth: 5,
+                arrowSize: 10
+              },
+              roundedSelection: true,
+              useShadows: false,
+            }}
+          />
         </div>
+        <div className="rounded overflow-hidden shadow-sm col-4 bg-dark" style={{ minHeight: 300}}>
+          <p>This is a placeholder for the Vex Robotics GUI</p>
+        </div>
+        </div>
+        <div>
+          {!isReady && <p className="text-warning mt-2">Loading Python environment, please wait...</p>}
+        </div>
+
+        {/* Button group */}
+        <div className="d-flex flex-wrap justify-content-center gap-3 my-3">
+          <button className="btn btn-primary" disabled={!isReady} onClick={handleRun}>
+            Run Code
+          </button>
+          <button className="btn btn-outline-light" onClick={toggleSaveCodePopup}>
+            Save Code
+          </button>
+          <button className="btn btn-outline-light" onClick={toggleUploadCodePopup}>
+            Upload Code
+          </button>
+        </div>
+
+        {/* Output section */}
+        <div className="mt-4">
+          <OutputBox content={output} />
+        </div>
+
+        {/* Popups */}
+        <SavePopup show={savePopup} onClose={() => setSavePopup(false)} onSave={saveCode} />
+        <UploadPopup show={uploadPopup} onClose={() => setUploadPopup(false)} onUpload={handleFileUpload} />
       </div>
-    </section>
+    </div>
+  </div>
+</section>
   );
 }

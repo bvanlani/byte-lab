@@ -6,18 +6,27 @@ import {Link} from 'react-router-dom';
 //Returning the component
 export default function HomeToNews(){
     return(
-        <section className="home-to-news">
-            <div className="container position-relative">
-                <div className="row justify-content-center">
-                    <div className="col-xl-6">
-                        <div className="text-center text-light">
-                            <h1>See What's Happening</h1> 
-                            <h2 className="mb-3"><em>Explore our latest events, blog posts, and updates!</em></h2>
-                            <Link className="btn btn-primary px-5 highlight" to="/news">Visit News</Link>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section className="home-to-news py-5 bg-dark text-light">
+  <div className="container text-center">
+    <div className="row justify-content-center">
+      <div className="col-lg-8">
+        <h1 className="fw-bolder mb-3 text-white">
+          See What's Happening
+        </h1>
+        <p className="fs-5 text-light-emphasis mb-4">
+          Explore our latest events, blog posts, and updates.
+        </p>
+        <Link
+          to="/news"
+          className="btn btn-light btn-lg fw-semibold px-5 py-2 rounded-1 hover-invert"
+        >
+          Visit News
+        </Link>
+      </div>
+    </div>
+  </div>
+</section>
+
+
     )
 }
