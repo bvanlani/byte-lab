@@ -55,14 +55,17 @@ export default function Compiler() {
   //When the worker is needed handling the code running
   const handleRun = () => {
     //Grabbing user code and adding the extra code to return.
-    const userCode = editorContent.current.getValue();
+    let userCode = editorContent.current.getValue();
+    //Replacing the input calls to use the async version required by the WASM python
+    userCode = userCode.replaceAll("input(", "await input(");
     //Combining the user code with the extra packages that are needed for the pyodide environement.
     const pythonCode = `
 #Grabbing the modules we need to run correctly
 import sys
 import io
 import js
-
+import asyncio
+import time
 #defining a gloabl py_future variable to hold future input values
 py_future = None
 
@@ -70,7 +73,8 @@ py_future = None
 sys.stdout = io.StringIO()
 sys.stderr = io.StringIO()
 
-#Function to handle user input prompts
+
+#Asynchronous input function to work with js prompt
 async def input(prompt=''):
     return await js.workerPrompt(prompt)
 
