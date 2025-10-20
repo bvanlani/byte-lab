@@ -71,22 +71,22 @@ export default function ContactUs(){
                     <form className="contact-us-form d-flex flex-column justify-content-around" onSubmit={handleSubmit}>
                         <div className="container bg-dark-secondary p-5 mt-3 rounded text-start">
                             <div className="form-group">
-                                <label htmlFor="email" className="fs-5">* Email:</label>
+                                <label htmlFor="email" className="fs-5"><span className="text-danger">*</span> Email:</label>
                                 <input type="text" className="form-control fw-bold rounded" id="email" placeholder="name@example.com" name="email" value={formData.email} onChange={handleChange}/>
                                 <span className="text-danger text-center">{errors.email}</span>
                             </div>    
                             <div className="form-group">
-                                <label htmlFor="fname" className="fs-5">* First Name:</label>
+                                <label htmlFor="fname" className="fs-5"><span className="text-danger">*</span>  First Name:</label>
                                 <input type="text" className="form-control fw-bold rounded" id="fname" name="fname" value={formData.fname} onChange={handleChange}/>
                                 <span className="text-danger text-center">{errors.fname}</span>
                             </div>  
                             <div className="form-group">
-                                <label htmlFor="lname" className="fs-5">* Last Name:</label>
+                                <label htmlFor="lname" className="fs-5"><span className="text-danger">*</span>  Last Name:</label>
                                 <input type="text" className="form-control fw-bold rounded" id="lname" name="lname" value={formData.lname} onChange={handleChange}/>
                                 <span className="text-danger text-center">{errors.lname}</span>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="content" className="fs-5">* Comments/Concerns:</label>
+                                <label htmlFor="content" className="fs-5"><span className="text-danger">*</span>  Comments/Concerns:</label>
                                 <textarea className="form-control form-content fw-bold rounded" id="content" name="content" value={formData.content} onChange={handleChange}></textarea>
                                 <span className="text-danger text-center">{errors.content}</span>
                             </div> 
