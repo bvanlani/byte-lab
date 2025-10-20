@@ -71,27 +71,27 @@ export default function ContactUs(){
                     <form className="contact-us-form d-flex flex-column justify-content-around" onSubmit={handleSubmit}>
                         <div className="container bg-dark-secondary p-5 mt-3 rounded text-start">
                             <div className="form-group">
-                                <label htmlFor="email" className="fs-5">Email:</label>
+                                <label htmlFor="email" className="fs-5">* Email:</label>
                                 <input type="text" className="form-control fw-bold rounded" id="email" placeholder="name@example.com" name="email" value={formData.email} onChange={handleChange}/>
                                 <span className="text-danger text-center">{errors.email}</span>
                             </div>    
                             <div className="form-group">
-                                <label htmlFor="fname" className="fs-5">First Name:</label>
+                                <label htmlFor="fname" className="fs-5">* First Name:</label>
                                 <input type="text" className="form-control fw-bold rounded" id="fname" name="fname" value={formData.fname} onChange={handleChange}/>
                                 <span className="text-danger text-center">{errors.fname}</span>
                             </div>  
                             <div className="form-group">
-                                <label htmlFor="lname" className="fs-5">Last Name:</label>
+                                <label htmlFor="lname" className="fs-5">* Last Name:</label>
                                 <input type="text" className="form-control fw-bold rounded" id="lname" name="lname" value={formData.lname} onChange={handleChange}/>
                                 <span className="text-danger text-center">{errors.lname}</span>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="content" className="fs-5">Comments/Concerns:</label>
+                                <label htmlFor="content" className="fs-5">* Comments/Concerns:</label>
                                 <textarea className="form-control form-content fw-bold rounded" id="content" name="content" value={formData.content} onChange={handleChange}></textarea>
                                 <span className="text-danger text-center">{errors.content}</span>
                             </div> 
                             <div className="d-flex align-items-center mt-3">
-                                <button type="submit" className="btn btn-primary me-3">Submit</button>
+                                <button type="submit" className="btn btn-primary btn-lg me-3">Submit</button>
                                 <span className="text-success text-center">{successMsg}</span>
                             </div>
                             
