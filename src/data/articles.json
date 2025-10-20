@@ -11,13 +11,13 @@
   },
   {
     "id": 2,
-    "title": "Kenosha Innovation Center Grand Opening",
-    "author": "Ethan D",
-    "date": "2025-10-20",
-    "thumbnail": "/byte-lab/assets/kInnovationCenter.jpg",
-    "authorImg": "/byte-lab/assets/DranePortrait.jpg",
-    "summary": "The Kenosha Innovation center opened on October 1st, 2025",
-    "content": "<p>The Kenosha Innovation Center had its grand opening last week on October 1st! The center's goal is to increase engineering opportunities in local Kenosha: providing a space for entrepreneurs and startup companies to work together. The building also creates a controlled place to train youth apprentices, and allow them to develop their skills before they start real world projects</p>"
+    "title": "LakeView Students Explore Statistics Through Sports Data",
+    "author": "Stat McGraph",
+    "date": "2025-09-30",
+    "thumbnail": "/byte-lab/assets/bg-showcase-3.jpg",
+    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
+    "summary": "AP Statistics students used real MLB and NBA datasets to study probability distributions and correlation — bringing math to life through sports.",
+    "content": ""
   },
   {
     "id": 3,
@@ -98,5 +98,15 @@
     "authorImg": "/byte-lab/assets/testimonials-2.jpg",
     "summary": "The Lakeview Chamber Orchestra debuted its new symphony, 'Echoes of Autumn,' to a full house. The blend of classical and modern motifs earned a standing ovation.",
     "content": ""
+  },
+  {
+    "id": 11,
+    "title": "Kenosha Innovation Center Grand Opening",
+    "author": "Ethan D",
+    "date": "2025-10-20",
+    "thumbnail": "/byte-lab/assets/kInnovationCenter.jpg",
+    "authorImg": "/byte-lab/assets/testimonials-2.jpg",
+    "summary": "The Kenosha Innovation center opened on October 1st, 2025",
+    "content": "<p>The Kenosha Innovation Center had its grand opening last week on October 1st! The center's goal is to increase engineering opportunities in local Kenosha: providing a space for entrepreneurs and startup companies to work together. The building also creates a controlled place to train youth apprentices, and allow them to develop their skills before they start real world projects</p>"
   }
 ]
