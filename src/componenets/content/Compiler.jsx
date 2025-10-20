@@ -16,8 +16,11 @@ export default function Compiler() {
   const [savePopup, setSavePopup] = useState(false);
   const [uploadPopup, setUploadPopup] = useState(false);
 
-  CompilerHook.prompt = () =>{
-    const userInput = window.prompt("Input required by your program: ");
+  //Handling the prompt from the compiler worker through the hook.
+  CompilerHook.prompt = () => {
+    //Getting user input via window prompt
+    const userInput = window.prompt("Input is required by the program: ");
+    //Sending back to the hook to send to the worker
     prompt.postMessage({type: "prompt", input: userInput});
   }
 
@@ -50,7 +53,6 @@ export default function Compiler() {
       });
     }
   }
-
 
   //When the worker is needed handling the code running
   const handleRun = () => {
@@ -119,13 +121,11 @@ async def input(prompt=''):
   function handleFileUpload(text) {
     //Getting target file
     const KEY = "===вYTE_LAвS_KEY===";
-
     // Check if it starts with the secret signature
     if (!text.startsWith(KEY)) {
       console.log("InaccurateKey");
       return;
     }
-
     //Removing the key from the code
     const code = text.replace(KEY + "\n", "");
     editorContent.current.setValue(code);
@@ -138,16 +138,12 @@ async def input(prompt=''):
     <section className="d-flex flex-column">
       <div className="container">
         <div className="row">
-          <div
-            className="rounded row-12 col-12 text-light"
-            style={{ minHeight: 300 }}
-          >
+          <div className="rounded row-12 col-12 text-light" style={{ minHeight: 300 }}>
             {/*This is the code editor where user modifes code.*/}
             <Editor height="400px" defaultLanguage="python" defaultValue="#This is where you make your own programs!"
               theme="vs-dark" fontFamily="'Fira Code', monospace" onMount={handleEditorDidMount}
               options={{fontSize: 16, lineNumbers: "on", roundedSelection: true, useShadows: false,}}
             />
-
             {/*The bottom buttons.*/}
             <button className="btn btn-primary m-3" disabled={!isReady} onClick={handleRun}>Run Code</button>
             <button className="btn btn-primary m-3" onClick={() => {toggleSaveCodePopup();}}>Save Code</button>
