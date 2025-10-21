@@ -15,6 +15,7 @@ export default function Compiler() {
   const { runPython, output, isReady, prompt } = CompilerHook();
   const [savePopup, setSavePopup] = useState(false);
   const [uploadPopup, setUploadPopup] = useState(false);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
 
   //Handling the prompt from the compiler worker through the hook.
   CompilerHook.prompt = () => {
@@ -161,9 +162,38 @@ async def input(prompt=''):
             }}
           />
         </div>
-        <div className="rounded overflow-hidden shadow-sm col-4 bg-dark" style={{ minHeight: 300}}>
-          <p>This is a placeholder for the Vex Robotics GUI</p>
-        </div>
+        <div className="rounded overflow-hidden shadow-sm col-4 bg-dark" style={{ minHeight: 300 }}>
+          <div className="m-3 bg-light rounded" style={{
+            width: '90%',
+            height: '90%',
+            boxSizing: 'border-box',
+            position: 'relative',
+            '--x': '50px',
+            '--y': '50px',
+          }}
+        >
+<div
+  style={{
+    '--x': `${position.x}px`,
+    '--y': `${position.y}px`,
+    position: 'relative',
+  }}
+>
+  <i
+    className="bi bi-robot"
+    style={{
+      color: 'black',
+      position: 'absolute',
+      left: 'var(--x)',
+      top: 'var(--y)',
+      fontSize: '2rem',
+    }}
+  ></i>
+</div>
+  </div>
+</div>
+
+
         </div>
         <div>
           {!isReady && <p className="text-warning mt-2">Loading Python environment, please wait...</p>}
