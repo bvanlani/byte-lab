@@ -8,14 +8,14 @@ import CompilerHook from "../effects/CompilerHook";
 import SavePopup from "../popups/SavePopup.jsx";
 import OutputBox from "../content/OutputBox.jsx";
 import UploadPopup from "../popups/UploadPopup.jsx";
+import PythonGUI from "../content/PythonGUI.jsx";
 
 export default function Compiler() {
   //Getting some constants to update it. Getting the editor and the pyodide to run code
   const editorContent = useRef(null);
-  const { runPython, output, isReady, prompt } = CompilerHook();
+  const { runPython, output, isReady, prompt, position} = CompilerHook();
   const [savePopup, setSavePopup] = useState(false);
   const [uploadPopup, setUploadPopup] = useState(false);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
 
   //Handling the prompt from the compiler worker through the hook.
   CompilerHook.prompt = () => {
@@ -81,11 +81,18 @@ sys.stderr = io.StringIO()
 async def input(prompt=''):
     return await js.workerPrompt(prompt)
 
+def moveForward():
+    js.moveForward()
+
+def turn(direction):
+    js.turn(direction)
+
 #User code starts here
-  ${userCode}
+${userCode}
 `;
   //Running the python code via the compiler hook
   runPython(pythonCode);
+  console.log(position);
   };
 
   //Saving the users code
@@ -162,37 +169,7 @@ async def input(prompt=''):
             }}
           />
         </div>
-        <div className="rounded overflow-hidden shadow-sm col-4 bg-dark" style={{ minHeight: 300 }}>
-          <div className="m-3 bg-light rounded" style={{
-            width: '90%',
-            height: '90%',
-            boxSizing: 'border-box',
-            position: 'relative',
-            '--x': '50px',
-            '--y': '50px',
-          }}
-        >
-<div
-  style={{
-    '--x': `${position.x}px`,
-    '--y': `${position.y}px`,
-    position: 'relative',
-  }}
->
-  <i
-    className="bi bi-robot"
-    style={{
-      color: 'black',
-      position: 'absolute',
-      left: 'var(--x)',
-      top: 'var(--y)',
-      fontSize: '2rem',
-    }}
-  ></i>
-</div>
-  </div>
-</div>
-
+        <PythonGUI position={position}></PythonGUI>
 
         </div>
         <div>
