@@ -34,6 +34,14 @@ export default function Compiler() {
     setUploadPopup(!uploadPopup);
   }
 
+  //Handling the reset of the python GUI
+  function handleReset() {
+    const pythonCode = `
+# Reset function to reset the GUI
+js.reset()`;
+    runPython(pythonCode);
+  }
+
   //Runs once the editor is loaded. Prevent pasting and updates the editor
   function handleEditorDidMount(editor, monaco) {
     editorContent.current = editor;
@@ -83,9 +91,11 @@ async def input(prompt=''):
 
 def moveForward():
     js.moveForward()
+    time.sleep(0.4)  # Small delay to ensure the main thread processes the move
 
 def turn(direction):
     js.turn(direction)
+    time.sleep(0.4)  # Small delay to ensure the main thread processes the turn
 
 #User code starts here
 ${userCode}
@@ -187,6 +197,7 @@ ${userCode}
           <button className="btn btn-outline-light" onClick={toggleUploadCodePopup}>
             Upload Code
           </button>
+          <button className="btn btn-primary" onClick={handleReset}>Reset</button>
         </div>
 
         {/* Output section */}

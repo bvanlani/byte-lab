@@ -44,10 +44,8 @@ export default function CompilerHook() {
           if (newX < 0) newX = 0;
           if (newY < 0) newY = 0;
 
-          console.log("New Position:", newX, newY);
           return { x: newX, y: newY };
       });
-        console.log("Position updated to:", position);
       } else if (type === "turn") {
         if(msg.data.direction === "right"){
             curDirection = (curDirection + 1) % 4;
