@@ -7,11 +7,12 @@ import React from "react";
 import {useState, useRef, useEffect} from 'react';
 
 //Returning the compiler hook component with all of its functions.
-export default function CompilerHook(){
+export default function CompilerHook() {
       const[isReady, setIsReady] = useState(false);
       const workerRef = useRef(null);
+      const [position, setPosition] = useState({ x: 0, y: 0 });
       const [output, setOutput] = React.useState("This is where the output will show!");
-
+      let curDirection = 0; // 0: up, 1: right, 2: down, 3: left
 //Loading pyodide when the component is mounted
   useEffect(() => {
     // Loading in the pyodide instance
@@ -27,9 +28,33 @@ export default function CompilerHook(){
           setIsReady(true);
       } else if(type === "result"){ //Otherwise returning the result from the program.
         setOutput(result);
-      } if (type === "prompt"){
+      } else if (type === "prompt"){
         const userInput = prompt(msg.data.prompt);
         worker.postMessage({type: "prompt", input: userInput});
+      } else if (type === "move") {
+        setPosition(prev => {
+          let newX = prev.x;
+          let newY = prev.y;
+
+          if (curDirection === 0) newY -= 10; // Up
+          else if (curDirection === 1) newX += 10; // Right
+          else if (curDirection === 2) newY += 10; // Down
+          else if (curDirection === 3) newX -= 10; // Left
+
+          if (newX < 0) newX = 0;
+          if (newY < 0) newY = 0;
+
+          return { x: newX, y: newY };
+      });
+      } else if (type === "turn") {
+        if(msg.data.direction === "right"){
+            curDirection = (curDirection + 1) % 4;
+        } else if(msg.data.direction === "left"){
+            curDirection = (curDirection + 3) % 4;
+        }
+      } else if (type === "reset") {
+        setPosition({ x: 0, y: 0 });
+        curDirection = 0;
       }
     };
     worker.postMessage({type: "load"}); //Once the worker is made posting the message to make it load.
@@ -47,5 +72,5 @@ export default function CompilerHook(){
         }
     }
     //Updating the results from the hook running.
-    return{runPython, output, isReady, prompt}
+    return{runPython, output, isReady, prompt, position};
 }

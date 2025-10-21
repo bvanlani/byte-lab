@@ -19,6 +19,21 @@ self.workerPrompt = async function(prompt) {
   });
 };
 
+self.moveForward = function(){
+    //Post message to main thread to move robot forward
+    self.postMessage({type: "move"});
+}
+
+self.turn = function(direction){
+    //Post message to main thread to turn robot
+    self.postMessage({type: "turn", direction: direction});
+}
+
+self.reset = function(){
+    //Post message to main thread to reset robot
+    self.postMessage({type: "reset"});
+}
+
 
   //Loading the pyodide instance when that is paylod type.
   if (type === "load") {

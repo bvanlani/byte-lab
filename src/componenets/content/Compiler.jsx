@@ -8,11 +8,12 @@ import CompilerHook from "../effects/CompilerHook";
 import SavePopup from "../popups/SavePopup.jsx";
 import OutputBox from "../content/OutputBox.jsx";
 import UploadPopup from "../popups/UploadPopup.jsx";
+import PythonGUI from "../content/PythonGUI.jsx";
 
 export default function Compiler() {
   //Getting some constants to update it. Getting the editor and the pyodide to run code
   const editorContent = useRef(null);
-  const { runPython, output, isReady, prompt } = CompilerHook();
+  const { runPython, output, isReady, prompt, position} = CompilerHook();
   const [savePopup, setSavePopup] = useState(false);
   const [uploadPopup, setUploadPopup] = useState(false);
 
@@ -31,6 +32,14 @@ export default function Compiler() {
   //Toggles the upload popup
   function toggleUploadCodePopup() {
     setUploadPopup(!uploadPopup);
+  }
+
+  //Handling the reset of the python GUI
+  function handleReset() {
+    const pythonCode = `
+# Reset function to reset the GUI
+js.reset()`;
+    runPython(pythonCode);
   }
 
   //Runs once the editor is loaded. Prevent pasting and updates the editor
@@ -80,11 +89,20 @@ sys.stderr = io.StringIO()
 async def input(prompt=''):
     return await js.workerPrompt(prompt)
 
+def moveForward():
+    js.moveForward()
+    time.sleep(0.4)  # Small delay to ensure the main thread processes the move
+
+def turn(direction):
+    js.turn(direction)
+    time.sleep(0.4)  # Small delay to ensure the main thread processes the turn
+
 #User code starts here
-  ${userCode}
+${userCode}
 `;
   //Running the python code via the compiler hook
   runPython(pythonCode);
+  console.log(position);
   };
 
   //Saving the users code
@@ -161,9 +179,8 @@ async def input(prompt=''):
             }}
           />
         </div>
-        <div className="rounded overflow-hidden shadow-sm col-4 bg-dark" style={{ minHeight: 300}}>
-          <p>This is a placeholder for the Vex Robotics GUI</p>
-        </div>
+        <PythonGUI position={position}></PythonGUI>
+
         </div>
         <div>
           {!isReady && <p className="text-warning mt-2">Loading Python environment, please wait...</p>}
@@ -180,6 +197,7 @@ async def input(prompt=''):
           <button className="btn btn-outline-light" onClick={toggleUploadCodePopup}>
             Upload Code
           </button>
+          <button className="btn btn-primary" onClick={handleReset}>Reset</button>
         </div>
 
         {/* Output section */}
