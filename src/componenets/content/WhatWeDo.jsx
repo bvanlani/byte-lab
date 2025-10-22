@@ -1,7 +1,7 @@
 //These are the images in the landing page
 import vexSchool from '../../assets/vexSchool.webp'
 import showcase2 from '../../assets/bg-showcase-2.jpg'
-import showcase3 from '../../assets/bg-showcase-3.jpg' 
+import impactImg from '../../assets/studentsCoding.jpg' 
 
 //Returning the landing page images and description.
 export default function WhatWeDo(){
@@ -27,7 +27,7 @@ export default function WhatWeDo(){
                     </div>
                 </div>
                 <div className="row g-0 bg-dark-secondary">
-                    <div className="col-lg-6 order-lg-2 text-white showcase-img" style={{ backgroundImage: `url(${showcase3})` }}></div>
+                    <div className="col-lg-6 order-lg-2 text-white showcase-img" style={{ backgroundImage: `url(${impactImg})` }}></div>
                     <div className="col-lg-6 order-lg-1 my-auto showcase-text">
                         <h2 className="text-light">Our Impact</h2>
                             <p className="lead mb-0 text-light">

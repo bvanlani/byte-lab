@@ -69,9 +69,9 @@ print("Hello, " + name + "!")`} />
 
                 {/* IF / ELIF / ELSE */}
                 <div className="container text-start p-5 mb-5 bg-dark text-light rounded p-6">
-                    <h1>3. If, Elif, and Else</h1>
+                    <h1>3. If Statements (If, Elif, and Else)</h1>
                     <br />
-                    <p>Conditional statements let your code make decisions.</p>
+                    <p>If statements are also called Conditional statements. There are three types of Conditional Statements: <code>if</code>, <code>elif</code>, and <code>else</code>. We use them to test values, and make decisions based on the result. Conditional Statements return either <code>true</code> or <code>false</code>. When if statements evaluate to true, the code inside them executes. When they evaluate to false the program skips the code. The program then checks any <code>elif</code> statements until one of them evaluates to true. If none of the if or elif statements evaluate to true but there is an <code>else</code> statement then the code in the else statement executes</p>
                     <CodeBox code={`# Example
 score = 85
 
