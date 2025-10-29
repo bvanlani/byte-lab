@@ -167,14 +167,18 @@ export default function PythonGUI({ position }) {
             boxSizing: "border-box",
             backgroundColor: "white",
             aspectRatio: "1/1",
-            backgroungImage: (i === 0 && j === 0) ? robot : "none",
+            backgroundImage: (i === 0 && j === 0) ? `url(${robot})` : "none",
+            backgroundImage: (i === 0 && j === 0) ? `url(${robot})` : "none",
+            backgroundSize: "contain",        
+            backgroundRepeat: "no-repeat",     
+            backgroundPosition: "center",      
             // Top border only on first row or if wall exists
-            borderTop: i === 0 ? (cell.walls[1] ? "1px solid blue" : "none") : "none",
+            borderTop: i === 0 ? (cell.walls[1] ? "2px solid blue" : "none") : "none",
             // Left border only on first column
-            borderLeft: j === 0 ? (cell.walls[0] ? "1px solid blue" : "none") : "none",
+            borderLeft: j === 0 ? (cell.walls[0] ? "2px solid blue" : "none") : "none",
             // Right and bottom borders always checked
-            borderRight: cell.walls[2] ? "1px solid blue" : "none",
-            borderBottom: cell.walls[3] ? "1px solid blue" : "none",
+            borderRight: cell.walls[2] ? "2px solid blue" : "none",
+            borderBottom: cell.walls[3] ? "2px solid blue" : "none",
           }}
         />
       ))
