@@ -11047,3 +11047,8 @@ footer.footer {
 .highlight {
   box-shadow: 0px 0px 10px 0px #008080;
 }
+
+.robotDiv{
+  width: 90%;
+  aspect-ratio: 1/1;
+}
