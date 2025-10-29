@@ -97,6 +97,8 @@ def turn(direction):
     js.turn(direction)
     time.sleep(0.4)  # Small delay to ensure the main thread processes the turn
 
+js.reset()
+
 #User code starts here
 ${userCode}
 `;
