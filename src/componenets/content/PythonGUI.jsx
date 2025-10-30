@@ -8,6 +8,7 @@
 
 import React, { useState, useEffect } from "react";
 import robot from "../../assets/robot.png";
+import finish from "../../assets/finish.png";
 
 /**
  * PythonGUI Component
@@ -18,7 +19,7 @@ import robot from "../../assets/robot.png";
  */
 export default function PythonGUI({ position }) {
   // State for maze size (default: 10x10)
-  const [mazeSize, setMazeSize] = useState(10);
+  const [mazeSize, setMazeSize] = useState(5);
   // State to hold the rendered JSX grid of maze cells
   const [grid, setGrid] = useState([]);
 
@@ -43,8 +44,7 @@ export default function PythonGUI({ position }) {
         row.push({
           visited: false,
           walls: [true, true, true, true], // [top, left, right, bottom]
-          isStart: i === 0 && j === 0,
-          isEnd: i === mazeSize - 1 && j === mazeSize - 1,
+          backgroundImage: (i === 0 && j === 0) ? `url(${robot})` : "none",
         });
       }
       newGrid.push(row);
@@ -64,6 +64,7 @@ export default function PythonGUI({ position }) {
     const newDataGrid = initializeGrid();
     const stack = [];
     const start = { x: 0, y: 0 };
+    const end = { x: mazeSize - 1, y: mazeSize - 1 };
 
     // Mark starting cell as visited and push to stack
     newDataGrid[0][0].visited = true;
@@ -85,8 +86,13 @@ export default function PythonGUI({ position }) {
         // Mark neighbor as visited
         newDataGrid[next.x][next.y].visited = true;
       } else {
+
         // No unvisited neighbors → backtrack
         stack.pop();
+
+        if (current.x === end.x && current.y === end.y) {
+          newDataGrid[current.x][current.y].backgroundImage = `url(${finish})`;
+        }
       }
     }
 
@@ -167,8 +173,7 @@ export default function PythonGUI({ position }) {
             boxSizing: "border-box",
             backgroundColor: "white",
             aspectRatio: "1/1",
-            backgroundImage: (i === 0 && j === 0) ? `url(${robot})` : "none",
-            backgroundImage: (i === 0 && j === 0) ? `url(${robot})` : "none",
+            backgroundImage: cell.backgroundImage,
             backgroundSize: "contain",        
             backgroundRepeat: "no-repeat",     
             backgroundPosition: "center",      
